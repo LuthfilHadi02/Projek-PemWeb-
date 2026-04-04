@@ -31,16 +31,18 @@
 .login-dark-overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4); /* Efek redup pada foto */
+    background-color: rgba(0, 0, 0, 0.4);
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; <-- INI YANG BIKIN DIA DI TENGAH BANGET TADI */
+    align-items: flex-start; /* Ganti jadi ini biar dia nempel ke atas */
+    padding-top: 15%; /* Tambahin ini buat ngatur jarak dari atapnya. Kalau kurang atas, kecilin angkanya (misal 10%) */
 }
 
 .login-center-logo {
-    width: 250px;
+    width: 150px; /* Tadi 250px kegedean, sekarang kecilin. Kalau masih kegedean, jadiin 120px */
     filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4));
 }
 
