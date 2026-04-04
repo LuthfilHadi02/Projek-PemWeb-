@@ -1,12 +1,94 @@
 /* ==========================================
-   10. SCHEDULE / CALENDAR PAGE
+   GLOBAL VARIABLES & RESET
    ========================================== */
-.text-center {
-    text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap');
+
+:root {
+    --bg-primary: #FFFFFF;
+    --text-primary: #111827;
+    --text-secondary: #6B7280;
+    --accent-color: #00967A; /* Hijau Teal dari Figma lu */
+    --accent-hover: #007A63;
+    --calendar-bg: #E6F7F4; /* Hijau mint terang */
+    --calendar-faded: #A3DFD5; /* Hijau pudar buat tanggal */
+    --event-dark: #10312B; /* Hijau sangat gelap buat event */
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-primary);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ==========================================
+   NAVBAR
+   ========================================== */
+.navbar {
+    background-color: var(--accent-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+    color: #FFFFFF;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.search-btn {
+    background-color: #FFFFFF;
+    color: var(--accent-color);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+/* ==========================================
+   HEADER JADWAL
+   ========================================== */
 .schedule-header {
-    padding: 64px 0 40px 0;
+    padding: 60px 0 40px 0;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,37 +97,38 @@
 .badge-green {
     background-color: var(--accent-color);
     color: #FFFFFF;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     padding: 8px 24px;
     border-radius: 50px;
-    display: inline-block;
     margin-bottom: 24px;
+    display: inline-block;
 }
 
 .page-title {
-    font-size: 40px;
-    line-height: 1.2;
+    font-size: 36px;
+    line-height: 1.3;
     color: var(--accent-color);
     margin-bottom: 16px;
     letter-spacing: -0.5px;
 }
 
 .page-desc {
-    color: var(--text-secondary);
     font-size: 14px;
     max-width: 600px;
     margin: 0 auto;
 }
 
-/* Calendar Card UI */
+/* ==========================================
+   KALENDER UI
+   ========================================== */
 .calendar-card {
-    background-color: #ECFDF5; /* Warna hijau sangat muda (mint) */
-    border-radius: 32px;
-    padding: 40px 48px;
-    max-width: 900px;
-    margin: 0 auto;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    background-color: var(--calendar-bg);
+    border-radius: 24px;
+    padding: 40px 60px;
+    max-width: 850px;
+    margin: 0 auto 80px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .calendar-nav {
@@ -53,11 +136,11 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 32px;
-    padding: 0 24px;
+    padding: 0 16px;
 }
 
 .calendar-month {
-    font-size: 28px;
+    font-size: 24px;
     color: var(--accent-color);
     letter-spacing: 1px;
 }
@@ -65,18 +148,12 @@
 .nav-arrow {
     background: none;
     border: none;
-    font-size: 28px;
+    font-size: 24px;
     color: var(--accent-color);
     cursor: pointer;
-    font-weight: 800;
-    transition: transform 0.2s;
+    font-weight: bold;
 }
 
-.nav-arrow:hover {
-    transform: scale(1.1);
-}
-
-/* Grid Kalender (7 Kolom) */
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -88,9 +165,9 @@
     color: #FFFFFF;
     text-align: center;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 13px;
     padding: 8px 0;
-    border-radius: 20px;
+    border-radius: 50px;
     margin-bottom: 8px;
 }
 
@@ -99,46 +176,117 @@
     color: #FFFFFF;
     text-align: center;
     font-weight: 600;
-    font-size: 20px;
-    padding: 16px 8px;
+    font-size: 18px;
+    padding: 14px 8px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 60px;
+    min-height: 64px;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
-.date-cell:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-2px);
-}
-
-/* State khusus buat kotak tanggal */
 .date-cell.faded {
-    background-color: #A7F3D0; /* Emerald super terang buat tanggal bulan lain */
+    background-color: var(--calendar-faded);
     color: #FFFFFF;
-    opacity: 0.7;
 }
 
 .date-cell.dark-event {
-    background-color: #111827; /* Hitam pekat kayak di desain */
-    color: #FFFFFF;
-}
-
-.date-cell.dark-event:hover {
-    background-color: #1F2937;
-}
-
-.date-cell.active-border {
-    box-shadow: 0 0 0 4px #ECFDF5, 0 0 0 6px var(--accent-color);
+    background-color: var(--event-dark);
 }
 
 .tiny-text {
-    font-size: 8px;
+    font-size: 9px;
     font-weight: 400;
     opacity: 0.8;
     margin-top: 4px;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.site-footer {
+    background-color: var(--accent-color);
+    color: #FFFFFF;
+    padding: 60px 0 40px 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 32px;
+}
+
+.footer-col h4 {
+    color: #FFFFFF;
+    margin-bottom: 24px;
+    font-size: 16px;
+}
+
+.footer-col p, .footer-col ul {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #FFFFFF;
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.social-icons a {
+    background: rgba(255, 255, 255, 0.2);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+}
+
+.footer-subscribe {
+    display: flex;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.footer-subscribe input {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    width: 100%;
+    outline: none;
+}
+
+.footer-subscribe input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-subscribe button {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: 600;
 }
