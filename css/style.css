@@ -27,7 +27,7 @@
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-primary);
-    color: var(--text-secondary);
+    color: var(#008774);
     line-height: 1.6;
 }
 
@@ -53,6 +53,71 @@ a {
     color: #FFFFFF;
 }
 
+<<<<<<< HEAD
+=======
+.meta-text {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.visi-misi-grid {
+    display: grid;
+    /* Kiri dapet 1.4 bagian, kanan dapet 1 bagian */
+    grid-template-columns: 1.4fr 1fr; 
+    gap: 60px; /* Lebarin dikit jaraknya biar gak sumpek */
+    background-color: #f7f9fa;
+    padding: 60px;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.visi-content h3 {
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+.visi-image-container {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.visi-image-container img {
+    width: 100%;
+    display: block;
+}
+
+.visi-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, var(--accent-color));
+    color: white;
+    padding: 24px;
+}
+
+.visi-box h3, .misi-box h3 {
+    font-size: 32px;
+    font-weight: 800; /* Bikin extra bold */
+    margin-bottom: 16px;
+    color: #111827; /* Hitam elegan */
+}
+
+.misi-box ul {
+    list-style: none; /* Hilangin titik hitam bullet */
+    padding: 0;
+}
+
+.misi-box ul li strong {
+    color: #111827; /* Huruf K, E, C, E jadi hijau */
+    font-size: 20px;
+}
+
+>>>>>>> 29495c8ec62c9720f1656d3824dbae3cb43db916
 /* ==========================================
    2. NAVBAR (PRESTIS & MULUS)
    ========================================== */
@@ -144,6 +209,7 @@ a {
 }
 
 .search-btn {
+<<<<<<< HEAD
     background-color: transparent;
     color: var(--accent-color);
     padding: 8px 12px;
@@ -151,13 +217,36 @@ a {
     cursor: pointer;
     font-size: 14px;
     font-weight: 600;
+=======
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #ffffff; /* Putih transparan */
+    color: #008774;
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: 1px solid #008774; /* Border tipis transparan */
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    backdrop-filter: blur(5px); /* Efek blur kaca */
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px); /* Efek melayang dikit */
+>>>>>>> 29495c8ec62c9720f1656d3824dbae3cb43db916
 }
 
 /* ==========================================
    3. HERO SECTION (RESTRUKTURISASI TOTAL)
    ========================================== */
+/* Hero Section Container */
 .hero-section {
     position: relative;
+<<<<<<< HEAD
     min-height: 600px; /* Perbesar sedikit */
     display: flex;
     align-items: center;
@@ -165,10 +254,20 @@ a {
     background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/hero-bg.jpg'); 
     background-size: cover;
     background-position: center;
+=======
+    min-height: 80vh; /* Sesuaikan tinggi agar proporsional */
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 0;
+>>>>>>> 29495c8ec62c9720f1656d3824dbae3cb43db916
 }
 
 .hero-content {
     display: flex;
+<<<<<<< HEAD
     flex-direction: column; /* Ubah ke kolom */
     align-items: flex-start; /* Rata kiri */
     text-align: left;
@@ -182,10 +281,36 @@ a {
     max-width: 600px;
     margin-bottom: 0;
     letter-spacing: -2px; /* Rapatkan letter-spacing */
+=======
+    justify-content: space-between; /* Ini yang bikin satu ke kiri, satu ke kanan */
+    align-items: center;
+    width: 100%;
+}
+
+/* Bagian Judul (Hero Left) */
+.hero-left {
+    flex: 1;
+}
+
+.hero-title {
+    font-size: 52px; /* Font besar sesuai gambar */
+    font-weight: 800;
+    line-height: 1.1;
+    color: #047857; /* Pastikan ini warna #00967A */
+    text-align: left;
+}
+
+/* Bagian Deskripsi (Hero Right) */
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Dorong kotak ke kanan */
+>>>>>>> 29495c8ec62c9720f1656d3824dbae3cb43db916
 }
 
 /* BOX DESKRIPSI MELAYANG DI KANAN */
 .hero-desc-box {
+<<<<<<< HEAD
     position: absolute; /* Posisikan absolut di dalam section */
     top: 50%;
     right: 120px; /* Posisikan kanan */
@@ -201,7 +326,20 @@ a {
     font-size: 14px;
     color: var(--text-secondary);
     margin-bottom: 16px;
+=======
+    max-width: 400px;
+    text-align: justify; /* Sesuai mockup, teks deskripsi rata kanan */
+>>>>>>> 29495c8ec62c9720f1656d3824dbae3cb43db916
 }
+
+.hero-text {
+    font-size: 15px;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+
 
 /* ==========================================
    4. NEW: VISI-MISI SECTION (CONTAINER BOX ABU-ABU)
@@ -290,19 +428,28 @@ a {
 /* ==========================================
    5. BUTTONS (SAMA PERSIS KE FIGMA)
    ========================================== */
+/* Tombol Gabung BOMA */
 .btn-primary {
     display: inline-block;
-    background-color: var(--accent-color);
+    background-color: #047857;
     color: #FFFFFF;
+<<<<<<< HEAD
     padding: 12px 24px;
     font-weight: 700; /* Superbold */
+=======
+    padding: 12px 32px;
+    font-weight: 700;
+>>>>>>> 29495c8ec62c9720f1656d3824dbae3cb43db916
     border-radius: 4px;
-    text-align: center;
+    text-transform: uppercase;
     transition: background 0.3s ease;
+<<<<<<< HEAD
     cursor: pointer;
     border: none;
     width: 100%;
     font-size: 14px;
+=======
+>>>>>>> 29495c8ec62c9720f1656d3824dbae3cb43db916
 }
 
 .btn-primary:hover {
