@@ -1,15 +1,13 @@
 /* ==========================================
-   1. GLOBAL VARIABLES & RESET
+   1. CSS RESET & GLOBAL VARIABLES
    ========================================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap');
-
 :root {
     --bg-primary: #FFFFFF;
     --bg-secondary: #F8FAFC;
     --text-primary: #111827;
     --text-secondary: #4B5563;
-    --accent-color: #00967A; /* Hijau Khas BOMA */
-    --accent-hover: #007F68;
+    --accent-color: #059669; /* Emerald Green yang lebih presisi sesuai gambar lu */
+    --accent-hover: #047857;
     --border-color: #E5E7EB;
 }
 
@@ -22,8 +20,19 @@
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-primary);
-    color: var(--text-primary);
+    color: var(#008774);
     line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .container {
@@ -32,126 +41,39 @@ body {
     padding: 0 24px;
 }
 
-/* ==========================================
-   2. NAVBAR
-   ========================================== */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 64px;
+.bg-accent {
     background-color: var(--accent-color);
-    height: 80px; 
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.nav-links {
-    display: flex;
-    gap: 24px;
-    height: 100%;
-    align-items: center;
-}
-
-.nav-links a {
-    font-size: 13px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.8);
-    position: relative;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    transition: 0.3s;
-}
-
-.nav-links a:hover, .nav-links a.active {
     color: #FFFFFF;
 }
 
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background-color: #FFFFFF;
-    transition: width 0.3s;
-}
-
-.nav-links a:hover::after, .nav-links a.active::after {
-    width: 100%;
-}
-
-.search-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #FFFFFF;
-    color: var(--accent-color);
-    padding: 8px 24px;
-    border-radius: 50px;
-    border: none;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
-}
-
-.search-btn:hover {
-    transform: scale(1.05);
-    background-color: #f3f4f6;
-}
-
-/* ==========================================
-   3. VISI MISI SECTION (FIXED RATIO)
-   ========================================== */
-.section-visi-misi {
-    padding: 80px 0;
-    background-color: #f7f9fa;
+.meta-text {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 4px;
+    display: block;
 }
 
 .visi-misi-grid {
     display: grid;
-    grid-template-columns: 1.4fr 1fr; /* Sesuai instruksi biar teks panjang */
-    gap: 60px;
+    /* Kiri dapet 1.4 bagian, kanan dapet 1 bagian */
+    grid-template-columns: 1.4fr 1fr; 
+    gap: 60px; /* Lebarin dikit jaraknya biar gak sumpek */
+    background-color: #f7f9fa;
+    padding: 60px;
+    border-radius: 20px;
     align-items: center;
 }
 
-.visi-box h3, .misi-box h3 {
-    font-size: 32px;
-    font-weight: 800;
-    margin-bottom: 16px;
-    color: #111827;
-}
-
-.visi-box p, .misi-box ul li {
-    font-size: 18px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-}
-
-.misi-box ul {
-    list-style: none;
-    padding: 0;
-}
-
-.misi-box ul li {
-    margin-bottom: 10px;
-}
-
-.misi-box ul li strong {
-    color: var(--accent-color); /* Huruf K-E-C-E jadi hijau */
-    font-size: 20px;
+.visi-content h3 {
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    font-size: 24px;
 }
 
 .visi-image-container {
-    border-radius: 20px;
-    overflow: hidden;
     position: relative;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .visi-image-container img {
@@ -159,28 +81,419 @@ body {
     display: block;
 }
 
+.visi-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, var(--accent-color));
+    color: white;
+    padding: 24px;
+}
+
+.visi-box h3, .misi-box h3 {
+    font-size: 32px;
+    font-weight: 800; /* Bikin extra bold */
+    margin-bottom: 16px;
+    color: #111827; /* Hitam elegan */
+}
+
+.misi-box ul {
+    list-style: none; /* Hilangin titik hitam bullet */
+    padding: 0;
+}
+
+.misi-box ul li strong {
+    color: #111827; /* Huruf K, E, C, E jadi hijau */
+    font-size: 20px;
+}
+
 /* ==========================================
-   4. FOOTER (BOMA STYLE)
+   2. NAVBAR (UPDATED)
+   ========================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px; /* Padding samping tetap */
+    background-color: #00967A;
+    border-bottom: 1px solid var(--border-color);
+    height: 80px; /* Tentukan tinggi tetap navbar biar rapi */
+}
+
+/* WADAH UTAMA LINK - Ini yang bikin nggak rapet */
+.nav-links {
+    display: flex;
+    gap: 32px; /* Jarak antar menu */
+    height: 100%; /* Biar tingginya penuh ke navbar */
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    color: #FFFFFF;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    height: 100%; /* Agar garis bawah (::after) benar-benar di bawah navbar */
+    text-decoration: none;
+}
+
+/* Garis Bawah (Indicator) */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 12px; /* Pas nempel di border-bottom navbar */
+    left: 0;
+    width: 0;
+    height: 3px; /* Sedikit lebih tebal biar kelihatan */
+    background-color: var(--bg-secondary);
+    transition: width 0.3s ease;
+}
+/* State ACTIVE & HOVER */
+.nav-links a.active {
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+/* Biar garis muncul pas hover ATAU pas active */
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+ 
+
+.search-btn {
+    background-color: #FFFFFF;
+    color: var(--accent-color);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+/* ==========================================
+   3. HERO SECTION
+   ========================================== */
+/* Hero Section Container */
+.hero-section {
+    position: relative;
+    min-height: 80vh; /* Sesuaikan tinggi agar proporsional */
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 0;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between; /* Ini yang bikin satu ke kiri, satu ke kanan */
+    align-items: center;
+    width: 100%;
+}
+
+/* Bagian Judul (Hero Left) */
+.hero-left {
+    flex: 1;
+}
+
+.hero-title {
+    font-size: 52px; /* Font besar sesuai gambar */
+    font-weight: 800;
+    line-height: 1.1;
+    color: #047857; /* Pastikan ini warna #00967A */
+    text-align: left;
+}
+
+/* Bagian Deskripsi (Hero Right) */
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Dorong kotak ke kanan */
+}
+
+.hero-desc-box {
+    max-width: 400px;
+    text-align: justify; /* Sesuai mockup, teks deskripsi rata kanan */
+}
+
+.hero-text {
+    font-size: 15px;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+
+
+/* ==========================================
+   4. BUTTONS
+   ========================================== */
+/* Tombol Gabung BOMA */
+.btn-primary {
+    display: inline-block;
+    background-color: #047857;
+    color: #FFFFFF;
+    padding: 12px 32px;
+    font-weight: 700;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+/* ==========================================
+   5. GRID LAYOUTS
+   ========================================== */
+.section-padding {
+    padding: 64px 0;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+.grid-3-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.grid-2-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+/* ==========================================
+   6. CARDS
+   ========================================== */
+.card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.card-desc {
+    font-size: 14px;
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+
+/* ==========================================
+   7. NEWS & HIGHLIGHTS
+   ========================================== */
+.news-list-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.news-list-img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.news-list-title {
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+.highlight-news {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 300px;
+    display: flex;
+}
+
+.full-width-banner {
+    height: 400px;
+}
+
+.highlight-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.highlight-overlay {
+    position: relative;
+    margin-top: auto;
+    padding: 32px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    width: 100%;
+    color: white;
+}
+
+.highlight-overlay h2 {
+    color: white;
+}
+
+/* Recent News Grid (1 Besar, 3 Kecil) */
+.recent-news-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
+}
+
+.recent-main {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.recent-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recent-overlay {
+    position: absolute;
+    bottom: 0;
+    padding: 16px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    width: 100%;
+    font-weight: 600;
+}
+
+.recent-side {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.recent-side img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* ==========================================
+   8. PAGINATION & TABLE
+   ========================================== */
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.page-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    border: none;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.page-btn.active {
+    background: var(--text-primary);
+    color: white;
+}
+
+.page-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.ranking-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.ranking-table th, .ranking-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 14px;
+}
+
+.ranking-table th {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.club-name-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* ==========================================
+   9. NEW FOOTER (4 Columns Green)
    ========================================== */
 .site-footer {
-    background-color: var(--accent-color);
+    background-color: #00967A; /* Warna hijau khas BOMA */
     color: #FFFFFF;
-    padding: 80px 0 40px;
+    padding: 80px 0;
+    font-family: 'Inter', sans-serif;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr; /* Pembagian kolom sesuai mockup */
     gap: 40px;
 }
 
 .footer-col h4 {
-    margin-bottom: 24px;
     font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #FFFFFF;
 }
 
 .footer-col ul {
     list-style: none;
+    padding: 0;
 }
 
 .footer-col ul li {
@@ -189,6 +502,7 @@ body {
 
 .footer-col ul li a {
     color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
     font-size: 14px;
     transition: 0.3s;
 }
@@ -198,29 +512,7 @@ body {
     padding-left: 5px;
 }
 
-.social-icons {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.social-btn {
-    width: 36px;
-    height: 36px;
-    background: rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    color: white;
-    transition: 0.3s;
-}
-
-.social-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
-}
-
-/* Subscribe Input Glassmorphism */
+/* Style Input Email (Glassmorphism Style) */
 .footer-subscribe {
     position: relative;
     display: flex;
@@ -230,11 +522,16 @@ body {
 .footer-subscribe input {
     width: 100%;
     padding: 12px 16px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2); /* Transparan putih */
     border: none;
     border-radius: 8px;
     color: white;
+    font-size: 14px;
     outline: none;
+}
+
+.footer-subscribe input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .send-btn {
@@ -244,4 +541,35 @@ body {
     border: none;
     color: white;
     cursor: pointer;
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.send-btn:hover {
+    opacity: 1;
+}
+
+/* Sosmed Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-btn {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.social-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
 }

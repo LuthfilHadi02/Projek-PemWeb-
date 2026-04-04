@@ -10,53 +10,88 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     
-
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <nav class="navbar">
+    <header class="navbar bg-accent">
         <div class="logo-container">
-            <img src="src/Foto_LogoBoma.png" alt="Logo BOMA" height="60">
+            <img src="src/Foto_LogoBoma.png" alt="Logo BOMA" height="40">
         </div>
         
-        <div class="nav-links">
-            <a href="#home" class="active">Home</a>
-            <a href="#profil">Profil</a>
-            <a href="#divisi">Divisi</a>
-            <a href="#berita">Berita</a>
-            <a href="fitur Jadwal/jadwal.html">Jadwal Latihan</a> <a href="#tentang">Tentang Kami</a>
-        </div>
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#category">Profil</a>
+            <a href="#trending">Divisi</a>
+            <a href="#recent">Berita</a>
+            <a href="Fitur Jadwal/jadwal.html">Jadwal Latihan</a>
+            <a href="#articles">Tentang Kami</a>
+        </nav>
 
-        <div class="search-container">
-            <button class="search-btn">🔍</button>
-            <input type="text" placeholder="Search">
-        </div>
-    </nav>
+        <button class="search-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+    <span>Search</span>
+</button>
 
-        <button class="search-btn">🔍 Search</button>
     </header>
 
     <main>
-        <section class="hero-section" id="home" style="background-image: url('public/hero-bg.jpg');">
-            <div class="container hero-content">
-                <div class="hero-left">
-                    <h1 class="hero-title">Sehatkan<br>Badanmu,<br>Banggakan<br>Kampusmu<br>Salam<br>Olahraga</h1>
-                </div>
-                
-                <div class="hero-right">
-                    <div class="hero-desc-box">
-                        <p>Wadah terintegrasi untuk memantau jadwal pertandingan, statistik atlet, dan berita terbaru. Dukung terus divisi olahraga favoritmu dan jadilah saksi sejarah kebanggaan kampus.</p>
-                        <button class="btn-primary" style="margin-top: 16px;">GABUNG BOMA</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section class="hero-section" id="home" 
+    style="background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url('src/foto_landingpage.jpeg');">
+    
+    <div class="container hero-content">
+        <div class="hero-left">
+            <h1 class="hero-title">
+                Sehatkan<br>Badanmu,<br>Banggakan<br>Kampusmu<br>Salam<br>Olahraga
+            </h1>
+        </div>
 
+        <div class="hero-right">
+            <div class="hero-desc-box">
+                <p class="hero-text">
+                    Wadah terintegrasi untuk memantau jadwal pertandingan, statistik atlet, dan berita terbaru. Dukung terus divisi olahraga favoritmu dan jadilah saksi sejarah kebanggaan kampus.
+                </p>
+                <a href="#" class="btn-primary">GABUNG BOMA</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="visi-misi section-padding">
+    <div class="container visi-misi-grid">
+        <div class="visi-content">
+            <div class="visi-box">
+                <h3>VISI</h3>
+                <p>BOMA (Badan Olahraga Mahasiswa) hadir sebagai wadah untuk mengkoordinasi dan mengembangkan minat bakat di Kampus UPI di CIbiru</p>
+            </div>
+            <div class="misi-box">
+                <h3>MISI</h3>
+                <ul>
+                    <li><strong>K</strong> = Kembangkan prestasi</li>
+                    <li><strong>E</strong> = Eksplor potensi</li>
+                    <li><strong>C</strong> = Ciptakan sportivitas</li>
+                    <li><strong>E</strong> = Eratkan solidaritas</li>
+                </ul>
+            </div>
+        </div>
+        <div class="visi-image-container">
+            <img src="src/foto_login.jpeg" alt="BOMA Kece">
+            <div class="visi-overlay">
+                <span class="hashtag">#BOMAKECE</span>
+                <p>BOMA hadir untuk mengembangkan minat bakat...</p>
+            </div>
+        </div>
+    </div>
+</section>
+    
         <section class="section-padding container" id="category">
+            <h2 class="section-title text-center">DIVISI OLAHRAGA</h2>
+            <p class="section-desc left-align">
             <div class="grid-3-cols">
                 <article class="card">
-                    <img src="public/basket.jpg" alt="Basket" class="card-img">
+                    <img src="src/Basket.png" alt="Basket" class="card-img">
                     <div class="card-content">
                         <h2 class="card-title">Bidang Basket</h2>
                         <p class="card-desc">Informasi seputar jadwal latihan, roster, turnamen antar fakultas, dan pencapaian tim basket kampus.</p>
@@ -65,7 +100,7 @@
                 </article>
 
                 <article class="card">
-                    <img src="public/futsal.jpg" alt="Futsal" class="card-img">
+                    <img src="src/Futsal.png" alt="Futsal" class="card-img">
                     <div class="card-content">
                         <h2 class="card-title">Bidang Futsal</h2>
                         <p class="card-desc">Kawal tim futsal kebanggaanmu. Pantau klasemen liga kampus dan jadwal latih tanding di sini.</p>
@@ -74,7 +109,7 @@
                 </article>
 
                 <article class="card">
-                    <img src="public/bulutangkis.jpg" alt="Bulu Tangkis" class="card-img">
+                    <img src="src/BuluTangkis.png" alt="Bulu Tangkis" class="card-img">
                     <div class="card-content">
                         <h2 class="card-title">Bidang Bulu Tangkis</h2>
                         <p class="card-desc">Cek ketersediaan lapangan, pendaftaran anggota baru, dan raihan medali dari divisi bulu tangkis.</p>
@@ -84,39 +119,156 @@
             </div>
         </section>
 
-    <section class="container section-padding" id="berita">
-        <h2 class="section-title">Berita Kegiatan</h2>
-        <div class="grid-news">
+<section class="section-padding container" id="recent">
+    <h2 class="section-title text-center">BERITA KEGIATAN</h2>
+    <div class="grid-3-cols">
+        <article class="card">
+            <img src="" alt="Berita 1" class="card-img" style="background-color: #ddd; height: 200px; display: block;">
+            <div class="card-content">
+                <span class="meta-text">05 April 2026</span>
+                <h2 class="card-title">Judul Berita 1</h2>
+                <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem.  Aliquam erat volutpat.</p>
+                <a href="#" class="btn-primary">Read More</a>
+            </div>
+        </article>
+
+        <article class="card">
+            <img src="" alt="Berita 2" class="card-img" style="background-color: #ddd; height: 200px; display: block;">
+            <div class="card-content">
+                <span class="meta-text">04 April 2026</span>
+                <h2 class="card-title">Judul Berita 2</h2>
+                <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem.  Aliquam erat volutpat.</p>
+                <a href="#" class="btn-primary">Read More</a>
+            </div>
+        </article>
+
+        <article class="card">
+            <img src="" alt="Berita 3" class="card-img" style="background-color: #ddd; height: 200px; display: block;">
+            <div class="card-content">
+                <span class="meta-text">03 April 2026</span>
+                <h2 class="card-title">Judul Berita 3</h2>
+                <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem.  Aliquam erat volutpat.</p>
+                <a href="#" class="btn-primary">Read More</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+        <section class="container" style="margin-top: 40px; margin-bottom: 40px;">
+            <article class="highlight-news full-width-banner">
+                <img src="public/messi.jpg" alt="Messi" class="highlight-img">
+                <div class="highlight-overlay">
+                    <span class="meta-text" style="color: white;">04 June 2026</span>
+                    <h2 style="font-size: 32px; margin-bottom: 8px;">LIONEL MESSI LEAVING LIGUE 1 TEAM PARIS SAINT-GERMAIN, CLUB CONFIRMS</h2>
+                    <p style="color: #E5E7EB;">The EuroLeague Finals Top Scorer is the individual award for the player that gained the highest points in the EuroLeague Finals.</p>
+                </div>
+            </article>
             
-            <div class="news-card">
-                <img src="public/berita1.jpg" alt="Berita" class="news-card-img">
-                <div class="news-card-content">
-                    <span class="news-card-meta">17 November 2025</span>
-                    <h3 class="news-card-title">KCA BOMA 2025</h3>
-                    <p class="news-card-desc">KCA BOMA merupakan jenjang pembekalan di lingkup Kampus UPI Cibiru yang didefinisikan sebagai suatu proses pembinaan insan organisatoris yang dilaksanakan secara terarah.</p>
-                </div>
+            <div class="pagination">
+                <button class="page-btn disabled">←</button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">4</button>
+                <button class="page-btn">→</button>
             </div>
+        </section>
 
-            <div class="news-card">
-                <img src="public/berita2.jpg" alt="Berita" class="news-card-img">
-                <div class="news-card-content">
-                    <span class="news-card-meta">08 Maret 2026</span>
-                    <h3 class="news-card-title">BUKA BERSAMA BOMA 2026</h3>
-                    <p class="news-card-desc">Buka Bersama BOMA adalah agenda rutin tahunan yang diselenggarakan oleh komunitas BOMA sebagai wadah silaturahmi bagi seluruh anggota, pengurus, dan atlet.</p>
+        <section class="section-padding container" id="ranking">
+            <div class="grid-2-cols">
+                
+                <div>
+                    <h2 class="section-title">Recent News</h2>
+                    <div class="recent-news-grid">
+                        <div class="recent-main">
+                            <img src="public/karate.jpg" alt="Karate">
+                            <div class="recent-overlay">
+                                <span>Baku 2023 World Taekwondo Championships</span>
+                            </div>
+                        </div>
+                        <div class="recent-side">
+                            <img src="public/side1.jpg" alt="Recent 1">
+                            <img src="public/side2.jpg" alt="Recent 2">
+                            <img src="public/side3.jpg" alt="Recent 3">
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="news-card">
-                <img src="public/berita3.jpg" alt="Berita" class="news-card-img">
-                <div class="news-card-content">
-                    <span class="news-card-meta">17 Desember 2025</span>
-                    <h3 class="news-card-title">JUARA 3 VOLLY DI PORSEMA</h3>
-                    <p class="news-card-desc">Tim Voli BOMA berhasil menorehkan prestasi gemilang dengan meraih Juara 3 dalam ajang PORSEMA. Kompetisi ini merupakan ajang bergengsi yang mempertemukan atlet terbaik.</p>
+                <div>
+                    <h2 class="section-title">Clubs Ranking</h2>
+                    <table class="ranking-table">
+                        <thead>
+                            <tr>
+                                <th>Club</th>
+                                <th>GP</th>
+                                <th>W</th>
+                                <th>D</th>
+                                <th>L</th>
+                                <th>PTS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="club-name-cell"><img src="public/logo-mci.png" alt="Logo" width="24"> Manchester City</td>
+                                <td>38</td><td>29</td><td>9</td><td>0</td><td>99</td>
+                            </tr>
+                            <tr>
+                                <td class="club-name-cell"><img src="public/logo-liv.png" alt="Logo" width="24"> Liverpool</td>
+                                <td>38</td><td>28</td><td>10</td><td>0</td><td>94</td>
+                            </tr>
+                            <tr>
+                                <td class="club-name-cell"><img src="public/logo-che.png" alt="Logo" width="24"> Chelsea</td>
+                                <td>38</td><td>21</td><td>11</td><td>6</td><td>76</td>
+                            </tr>
+                            <tr>
+                                <td class="club-name-cell"><img src="public/logo-tot.png" alt="Logo" width="24"> Tottenham Hotspur</td>
+                                <td>38</td><td>22</td><td>5</td><td>11</td><td>71</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
 
-        </div>
-    </section>
+            </div>
+        </section>
+
+        <section class="section-padding container" id="articles">
+            <h2 class="section-title">Sports Article</h2>
+            <div class="grid-3-cols">
+                <article class="card">
+                    <img src="public/article1.jpg" alt="Article 1" class="card-img">
+                    <div class="card-content">
+                        <span class="meta-text">04 June 2026</span>
+                        <h2 class="card-title">5 Exercises Basketball Players Should Be Using</h2>
+                        <p class="card-desc">Strength in basketball isn’t all about a massive body mass...</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="public/article2.jpg" alt="Article 2" class="card-img">
+                    <div class="card-content">
+                        <span class="meta-text">03 June 2026</span>
+                        <h2 class="card-title">Golden Knights out to fulfill owner's quest</h2>
+                        <p class="card-desc">The Vegas Golden Knights will play the Florida Panthers...</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="public/article3.jpg" alt="Article 3" class="card-img">
+                    <div class="card-content">
+                        <span class="meta-text">01 June 2026</span>
+                        <h2 class="card-title">Outdoor Badminton Gets Support From Local</h2>
+                        <p class="card-desc">The Badminton World Federation is developing Air Badminton...</p>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="pagination" style="justify-content: flex-start; margin-top: 24px;">
+                <button class="page-btn disabled">←</button>
+                <button class="page-btn active" style="background: var(--text-primary); color: white;">→</button>
+            </div>
+        </section>
+
+    </main>
 
 <footer class="site-footer">
     <div class="container footer-grid">
