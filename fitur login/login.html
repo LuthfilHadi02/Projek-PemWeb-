@@ -1,66 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - BOMA</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/login.css">
 </head>
-<body>
+<body class="login-body-new">
 
-    <div class="login-container">
+    <div class="login-split-wrapper">
         
-        <div class="left-column">
-            <div class="left-overlay">
-                <div class="logo-group">
-                    <h1 class="main-logo">BOMA</h1>
-                    <h2 class="sub-logo">BADAN OLAHRAGA MAHASISWA</h2>
-                    <p class="logo-description">BADAN OLAHRAGA MAHASISWA</p>
+        <div class="login-split-left" style="background-image: url('../public/login-bg.jpg');">
+            <div class="login-dark-overlay">
+                <img src="../public/logo-boma-white.png" alt="Logo BOMA" class="login-center-logo">
+            </div>
+        </div>
+
+        <div class="login-split-right">
+            <div class="login-form-box">
+                
+                <div class="login-toggle-pill">
+                    <button class="toggle-pill-btn active">Login</button>
+                    <button class="toggle-pill-btn">Register</button>
                 </div>
-            </div>
-        </div>
 
-        <div class="right-column">
-            <div class="form-wrapper">
-                <h3 class="login-header">LOGIN</h3>
-                <div class="header-divider"></div>
-                <a href="#" class="create-account-link">Create an Account</a>
-
-                <form>
-                    <div class="input-group">
-                        <label for="email" class="input-label">Email Address</label>
-                        <div class="input-field">
-                            <span class="icon">&#9993;</span> 
-                            <input type="email" id="email" placeholder="Enter your Email" class="form-input">
+                <form action="#">
+                    <div class="login-input-group">
+                        <label>Email</label>
+                        <div class="login-input-line">
+                            <span class="icon">✉️</span>
+                            <input type="email" placeholder="Enter your email address" required>
                         </div>
                     </div>
 
-                    <div class="input-group">
-                        <label for="password" class="input-label">Password</label>
-                        <div class="input-field">
-                            <span class="icon">&#128274;</span>
-                            <input type="password" id="password" placeholder="Enter your Password" class="form-input">
-                            <span class="toggle-password">&#128065;</span>
+                    <div class="login-input-group">
+                        <label>Password</label>
+                        <div class="login-input-line">
+                            <span class="icon">🔒</span>
+                            <input type="password" placeholder="Enter your Password" required>
+                            <span class="icon">👁️</span>
                         </div>
                     </div>
 
-                    <div class="remember-forgot-row">
-                        <div class="remember-me">
-                            <input type="checkbox" id="remember" class="checkbox-input">
-                            <label for="remember">Remember me</label>
-                        </div>
-                        <a href="#" class="forgot-password-link">Forgot Password?</a>
+                    <div class="login-options-row">
+                        <label class="login-remember">
+                            <input type="checkbox"> 
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="login-forgot">Forgot Password ?</a>
                     </div>
 
-                    <button type="submit" class="sign-in-button">SIGN IN</button>
+                    <button type="submit" class="login-btn-submit">Login</button>
                 </form>
+
+                <div class="login-social-area">
+                    <p>or continue with</p>
+                    <div class="login-social-icons">
+                        <a href="#" class="soc-icon" style="color: #1877F2; background: white;">f</a> 
+                        <a href="#" class="soc-icon" style="color: white;">🍎</a> 
+                        <a href="#" class="soc-icon" style="background: white;">G</a>
+                    </div>
+                </div>
+
             </div>
         </div>
-
     </div>
 
 </body>

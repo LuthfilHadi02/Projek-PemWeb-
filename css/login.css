@@ -1,240 +1,197 @@
-/* ================= GLOBAL RESET ================= */
-* {
+/* ==========================================
+   FITUR LOGIN (MATCHING NEW FIGMA DESIGN)
+   ========================================== */
+.login-body-new {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif; /* Pakai font Inter yang bersih */
-}
-
-body {
-    background-color: #f0f2f5; /* Warna background abu-abu pudar di belakang box login */
+    font-family: 'Inter', sans-serif;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    overflow: hidden; /* Biar gak bisa di-scroll */
+    background-color: #008773; /* Warna dasar Teal persis gambar */
 }
 
-/* ================= LOGIN PAGE LAYOUT ================= */
-.login-container {
+.login-split-wrapper {
     display: flex;
-    width: 1000px; /* Lebar maksimal box login */
-    max-width: 100%;
-    height: 600px;
-    background-color: #fff;
-    border-radius: 8px; /* Ujung-ujung kotak melengkung lembut */
-    overflow: hidden; /* Biar gambar gak keluar dari radius kotak */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Efek bayangan */
+    height: 100vh;
+    width: 100vw;
 }
 
-/* ================= KOLOM KIRI (GAMBAR & LOGO) ================= */
-.left-column {
-    flex: 1; /* Ambil setengah lebar kotak */
-    background-image: url('LOGIN.jpg'); /* GANTI INI DENGAN FOTO ASLI DARI FIGMA */
+/* KIRI (GAMBAR) */
+.login-split-left {
+    flex: 1.1; /* Proporsi kiri sedikit lebih besar */
     background-size: cover;
     background-position: center;
+    border-top-right-radius: 40px; /* Lengkungan kanan atas */
+    border-bottom-right-radius: 40px; /* Lengkungan kanan bawah */
     position: relative;
+    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.15); /* Bayangan tumpuk ke kanan */
+    z-index: 2;
 }
 
-/* Lapisan overlay di atas gambar biar teks putih gampang dibaca */
-.left-column::after {
-    content: '';
+.login-dark-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5); /* Hitam transparan 50% */
-}
-
-/* Konten teks yang ditumpuk di tengah gambar */
-.left-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #fff;
-    z-index: 1; /* Pastikan di atas overlay hitam */
-    width: 100%;
-    padding: 20px;
-}
-
-.main-logo {
-    font-size: 80px;
-    font-weight: 900; /* Super bold */
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    letter-spacing: -2px; /* Jarak antar huruf rapat */
-}
-
-.sub-logo {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-}
-
-.logo-description {
-    font-size: 12px;
-    font-weight: 300;
-}
-
-/* ================= KOLOM KANAN (FORM) ================= */
-.right-column {
-    flex: 1; /* Ambil setengah lebar kotak */
-    background-color: #fff;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Efek redup pada foto */
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px;
 }
 
-.form-wrapper {
+.login-center-logo {
+    width: 250px;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4));
+}
+
+/* KANAN (FORM LOGIN) */
+.login-split-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    background-color: #008773; /* Warna Teal padat */
+}
+
+.login-form-box {
     width: 100%;
-    max-width: 360px; /* Lebar form gak boleh terlalu lebar */
-    text-align: center;
+    max-width: 380px;
 }
 
-.login-header {
-    color: #007B8A; /* Warna hijau teal sesuai button */
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    text-transform: uppercase;
+/* TOGGLE LOGIN/REGISTER */
+.login-toggle-pill {
+    background-color: #E6F4F1; /* Warna putih kehijauan terang */
+    border-radius: 50px;
+    display: flex;
+    padding: 6px;
+    margin-bottom: 40px;
 }
 
-.header-divider {
-    height: 2px;
-    background-color: #eee;
-    margin-bottom: 10px;
-}
-
-.create-account-link {
-    color: #007BFF; /* Biru link standard */
-    font-size: 14px;
-    text-decoration: none;
-    margin-bottom: 25px;
-    display: inline-block;
-}
-
-.create-account-link:hover {
-    text-decoration: underline;
-}
-
-/* ================= INPUT GROUP STYLES ================= */
-.input-group {
-    text-align: left;
-    margin-bottom: 15px;
-}
-
-.input-label {
-    display: block;
+.toggle-pill-btn {
+    flex: 1;
+    padding: 12px 0;
+    border: none;
+    background: transparent;
+    border-radius: 50px;
     font-weight: 600;
+    color: #008773; /* Warna teks teal pas inactive */
+    cursor: pointer;
     font-size: 14px;
-    margin-bottom: 5px;
-    color: #333;
+    transition: 0.3s;
 }
 
-/* Container untuk icon + input field */
-.input-field {
+.toggle-pill-btn.active {
+    background-color: #008773; /* Tombol aktif berubah teal */
+    color: #FFFFFF; /* Teks putih */
+}
+
+/* INPUT FORM */
+.login-input-group {
+    margin-bottom: 24px;
+}
+
+.login-input-group label {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+.login-input-line {
     display: flex;
     align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 12px;
-    background-color: #f9f9f9;
+    border-bottom: 1px solid #FFFFFF; /* Garis bawah putih */
+    padding-bottom: 8px;
 }
 
-.icon {
-    color: #999;
-    margin-right: 12px;
-    font-size: 18px;
+.login-input-line .icon {
+    font-size: 16px;
+    margin: 0 8px 0 0;
 }
 
-.form-input {
+.login-input-line input {
+    flex: 1;
+    background: transparent;
     border: none;
-    background: none;
-    outline: none;
-    flex: 1; /* Ambil sisa lebar div */
+    color: #FFFFFF;
     font-size: 14px;
-    color: #333;
+    outline: none;
 }
 
-.form-input::placeholder {
-    color: #aaa;
+.login-input-line input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
 }
 
-/* Icon toggle password (eye) di sebelah kanan */
-.toggle-password {
-    cursor: pointer;
-    margin-left: 10px;
-    color: #999;
-    font-size: 18px;
-}
-
-/* ================= REMEMBER & FORGOT ROW ================= */
-.remember-forgot-row {
+/* CHECKBOX & FORGOT PASSWORD */
+.login-options-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 14px;
-    margin-bottom: 25px;
+    font-size: 12px;
+    margin-bottom: 40px;
 }
 
-.remember-me {
+.login-remember {
     display: flex;
     align-items: center;
-}
-
-.checkbox-input {
-    margin-right: 7px;
+    gap: 8px;
     cursor: pointer;
 }
 
-.remember-me label {
-    cursor: pointer;
-    color: #333;
-}
-
-.forgot-password-link {
-    color: #007BFF;
+.login-forgot {
+    color: #FFFFFF;
     text-decoration: none;
 }
 
-.forgot-password-link:hover {
+.login-forgot:hover {
     text-decoration: underline;
 }
 
-/* ================= SIGN IN BUTTON ================= */
-.sign-in-button {
+/* TOMBOL SUBMIT */
+.login-btn-submit {
     width: 100%;
-    background-color: #007B8A; /* Warna hijau teal */
-    color: #fff;
+    background-color: #E6F4F1; /* Warna putih kehijauan terang */
+    color: #008773; /* Teks Teal */
+    padding: 16px;
     border: none;
-    border-radius: 4px;
-    padding: 14px;
+    border-radius: 50px;
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
-    text-transform: uppercase;
-    transition: background-color 0.3s;
+    margin-bottom: 30px;
+    transition: 0.3s;
 }
 
-.sign-in-button:hover {
-    background-color: #006977; /* Warna hijau sedikit lebih tua saat di-hover */
+.login-btn-submit:hover {
+    background-color: #FFFFFF;
 }
 
-/* ================= RESPONSIVE DESIGN (Biar gak hancur di layar HP) ================= */
-@media (max-width: 768px) {
-    .login-container {
-        flex-direction: column; /* Jadi tumpukan vertikal */
-        height: auto;
-    }
-    .left-column {
-        height: 250px; /* Atur tinggi gambar di HP */
-    }
-    .overlay-content h1 {
-        font-size: 50px; /* Teks logo dikecilin */
-    }
+/* SOCIAL LOGIN */
+.login-social-area {
+    text-align: center;
+}
+
+.login-social-area p {
+    font-size: 12px;
+    margin-bottom: 16px;
+    opacity: 0.9;
+}
+
+.login-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.soc-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
 }
