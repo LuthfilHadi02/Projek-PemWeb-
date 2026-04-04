@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - BOMA</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="css/login.css">
     
     <script>
         if (localStorage.getItem('isLoggedIn') === 'true') {
@@ -17,9 +17,9 @@
 
     <div class="login-split-wrapper">
         
-        <div class="login-split-left" style="background-image: url('../src/foto_login.jpeg');">
+        <div class="login-split-left" style="background-image: url('./src/foto_login.jpeg');">
             <div class="login-dark-overlay">
-                <img src="../src/Foto_LogoBoma.png" alt="Logo BOMA" class="login-center-logo">
+                <img src="./src/Foto_LogoBoma.png" alt="Logo BOMA" class="login-center-logo">
             </div>
         </div>
 
@@ -36,7 +36,7 @@
                         <label>Email</label>
                         <div class="login-input-line">
                             <span class="icon">✉️</span>
-                            <input type="email" placeholder="Enter your email address" required>
+                            <input type="text" placeholder="Enter your email address" required>
                         </div>
                     </div>
 
