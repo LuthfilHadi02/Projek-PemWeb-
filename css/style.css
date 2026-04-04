@@ -53,6 +53,61 @@ a {
     display: block;
 }
 
+.visi-misi-grid {
+    display: grid;
+    /* Kiri dapet 1.4 bagian, kanan dapet 1 bagian */
+    grid-template-columns: 1.4fr 1fr; 
+    gap: 60px; /* Lebarin dikit jaraknya biar gak sumpek */
+    background-color: #f7f9fa;
+    padding: 60px;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.visi-content h3 {
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+.visi-image-container {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.visi-image-container img {
+    width: 100%;
+    display: block;
+}
+
+.visi-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, var(--accent-color));
+    color: white;
+    padding: 24px;
+}
+
+.visi-box h3, .misi-box h3 {
+    font-size: 32px;
+    font-weight: 800; /* Bikin extra bold */
+    margin-bottom: 16px;
+    color: #111827; /* Hitam elegan */
+}
+
+.misi-box ul {
+    list-style: none; /* Hilangin titik hitam bullet */
+    padding: 0;
+}
+
+.misi-box ul li strong {
+    color: #111827; /* Huruf K, E, C, E jadi hijau */
+    font-size: 20px;
+}
+
 /* ==========================================
    2. NAVBAR (UPDATED)
    ========================================== */
