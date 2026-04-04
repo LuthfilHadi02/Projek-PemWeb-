@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+    <script>
+    if (localStorage.getItem('isLoggedIn') !== 'true') {
+        window.location.href = '../index.html'; 
+    }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jadwal Latihan - BOMA</title>
@@ -20,12 +25,12 @@
         </div>
         
         <nav class="nav-links">
-            <a href="../index.html">Home</a>
-            <a href="../index.html#profil">Visi-Misi</a>
-            <a href="../index.html#category">Divisi</a>
-            <a href="../index.html#trending">Berita</a>
+            <a href="../homepage/home.html">Home</a>
+            <a href="../homepage/home.html#profil">Visi-Misi</a>
+            <a href="../homepage/home.html#kategori">Divisi</a>
+            <a href="../homepage/home.html#recent">Berita</a>
             <a href="jadwal.html" class="active">Jadwal Latihan</a>
-            <a href="../index.html#tentangkami">Tentang Kami</a>
+            <a href="../homepage/home.html#articles">Tentang Kami</a>
         </nav>
 
         <div class="search-btn">
