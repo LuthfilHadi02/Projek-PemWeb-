@@ -116,36 +116,56 @@ a {
 .search-btn {
     display: flex;
     align-items: center;
-    gap: 10px; /* Jarak antara icon dan teks */
+    gap: 10px; 
     background-color: #FFFFFF;
-    color: var(--accent-color); /* Hijau khas BOMA */
+    color: var(--accent-color); 
     padding: 10px 24px;
-    border-radius: 50px; /* Membuat bentuk pill/oval */
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Shadow halus agar terlihat premium */
+    border-radius: 50px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
     transition: all 0.3s ease;
+    cursor: text; /* Ganti pointer jadi text karena sekarang buat ngetik */
 }
 
-.search-btn:hover {
-    transform: translateY(-2px); /* Efek melayang saat di-hover */
+/* Efek melayang jalan pas di-hover ATAU pas lagi diklik buat ngetik (focus-within) */
+.search-btn:hover, 
+.search-btn:focus-within {
+    transform: translateY(-2px); 
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     background-color: #f8fafc;
-}
-
-.search-btn:active {
-    transform: translateY(0); /* Efek menekan saat diklik */
 }
 
 .search-btn svg {
     transition: transform 0.3s ease;
 }
 
-.search-btn:hover svg {
-    transform: scale(1.1); /* Icon sedikit membesar saat hover */
+.search-btn:hover svg, 
+.search-btn:focus-within svg {
+    transform: scale(1.1); 
+}
+
+/* --- STYLING KHUSUS KOTAK KETIKANNYA --- */
+.search-btn input {
+    border: none;
+    outline: none;
+    background: transparent; /* Biar nyatu sama bungkusan putihnya */
+    color: var(--accent-color);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    width: 60px; /* Lebar default pas cuma ada tulisan "Search" */
+    transition: width 0.3s ease;
+}
+
+/* Warna dan ketebalan teks "Search" sebelum diketik */
+.search-btn input::placeholder {
+    color: var(--accent-color);
+    font-weight: 700;
+    opacity: 1;
+}
+
+/* Pas lu klik buat ngetik, kotaknya otomatis manjang biar lega */
+.search-btn input:focus {
+    width: 130px; 
 }
 
 
