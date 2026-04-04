@@ -101,6 +101,7 @@
 }
 
 .login-input-line {
+    gap: 10px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid #FFFFFF; /* Garis bawah putih */
@@ -183,7 +184,7 @@
 .login-social-icons {
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 20px;
 }
 
 .soc-icon {
