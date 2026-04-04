@@ -1,17 +1,14 @@
 /* ==========================================
-   GLOBAL VARIABLES & RESET
+   1. CSS RESET & GLOBAL VARIABLES
    ========================================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap');
-
 :root {
     --bg-primary: #FFFFFF;
+    --bg-secondary: #F8FAFC;
     --text-primary: #111827;
-    --text-secondary: #6B7280;
-    --accent-color: #00967A; /* Hijau Teal dari Figma lu */
-    --accent-hover: #007A63;
-    --calendar-bg: #E6F7F4; /* Hijau mint terang */
-    --calendar-faded: #A3DFD5; /* Hijau pudar buat tanggal */
-    --event-dark: #10312B; /* Hijau sangat gelap buat event */
+    --text-secondary: #4B5563;
+    --accent-color: #059669; /* Emerald Green yang lebih presisi sesuai gambar lu */
+    --accent-hover: #047857;
+    --border-color: #E5E7EB;
 }
 
 * {
@@ -30,6 +27,7 @@ body {
 h1, h2, h3, h4 {
     font-family: 'Montserrat', sans-serif;
     color: var(--text-primary);
+    font-weight: 700;
 }
 
 a {
@@ -38,45 +36,45 @@ a {
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
 }
 
+.bg-accent {
+    background-color: var(--accent-color);
+    color: #FFFFFF;
+}
+
+.meta-text {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 4px;
+    display: block;
+}
+
 /* ==========================================
-   2. NAVBAR (FIXED)
+   2. NAVBAR (UPDATED)
    ========================================== */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-<<<<<<< HEAD
-    padding: 0 24px; 
-    background-color: var(--accent-color);
+    padding: 0 24px; /* Padding samping tetap */
+    background-color: #00967A;
     border-bottom: 1px solid var(--border-color);
-    height: 80px; 
-=======
-    padding: 0 40px; /* Padding atas bawah dihapus karena pakai height */
-    height: 80px;    /* Samain tingginya biar konsisten antar halaman */
-    color: #FFFFFF;
->>>>>>> fcd155e30dc73a30b9e796c98ba09bb629152547
+    height: 80px; /* Tentukan tinggi tetap navbar biar rapi */
 }
 
-/* Wajib ada wadah ini di HTML biar jaraknya gak rapet */
+/* WADAH UTAMA LINK - Ini yang bikin nggak rapet */
 .nav-links {
     display: flex;
-<<<<<<< HEAD
-    gap: 32px; 
-    height: 100%; 
-=======
-    gap: 32px;
-    height: 100%; /* Biar link-nya penuh setinggi navbar */
->>>>>>> fcd155e30dc73a30b9e796c98ba09bb629152547
+    gap: 32px; /* Jarak antar menu */
+    height: 100%; /* Biar tingginya penuh ke navbar */
     align-items: center;
 }
 
 .nav-links a {
-<<<<<<< HEAD
     font-size: 14px;
     font-weight: 500;
     position: relative;
@@ -84,7 +82,7 @@ a {
     transition: opacity 0.3s ease;
     display: flex;
     align-items: center;
-    height: 100%; 
+    height: 100%; /* Agar garis bawah (::after) benar-benar di bawah navbar */
     text-decoration: none;
 }
 
@@ -92,78 +90,29 @@ a {
 .nav-links a::after {
     content: "";
     position: absolute;
-    bottom: 12px; 
+    bottom: 12px; /* Pas nempel di border-bottom navbar */
     left: 0;
     width: 0;
-    height: 3px; 
+    height: 3px; /* Sedikit lebih tebal biar kelihatan */
     background-color: var(--bg-secondary);
     transition: width 0.3s ease;
 }
-
 /* State ACTIVE & HOVER */
 .nav-links a.active {
-    color: #FFFFFF; /* Tetap putih biar kelihatan di background hijau */
+    color: #FFFFFF;
     font-weight: 700;
 }
 
 .nav-links a:hover {
     opacity: 0.8;
 }
-
 /* Biar garis muncul pas hover ATAU pas active */
 .nav-links a:hover::after,
 .nav-links a.active::after {
     width: 100%;
-=======
-    font-size: 14px; /* Sedikit lebih besar biar kebaca */
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.8);
-    transition: 0.3s;
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 100%;
 }
+ 
 
-/* Animasi Garis Bawah Putih */
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    bottom: 20px; /* Jarak dari bawah teks */
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #FFFFFF;
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover, 
-.nav-links a.active {
-    color: #FFFFFF;
-    font-weight: 600;
->>>>>>> fcd155e30dc73a30b9e796c98ba09bb629152547
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-    width: 100%;
-}
-
-.search-btn {
-    background-color: #FFFFFF;
-    color: var(--accent-color);
-    padding: 8px 24px;
-    border-radius: 50px;
-    font-size: 13px;
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.search-btn:hover {
-    transform: scale(1.05); /* Efek dikit pas hover tombol */
-}
 .search-btn {
     background-color: #FFFFFF;
     color: var(--accent-color);
@@ -174,6 +123,7 @@ a {
     border: none;
     cursor: pointer;
 }
+
 /* ==========================================
    HEADER JADWAL
    ========================================== */
