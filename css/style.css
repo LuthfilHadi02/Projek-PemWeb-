@@ -154,7 +154,7 @@ a {
 }
 /* State ACTIVE & HOVER */
 .nav-links a.active {
-    color: var(--accent-color);
+    color: #FFFFFF;
     font-weight: 700;
 }
 
@@ -171,23 +171,22 @@ a {
 .search-btn {
     display: flex;
     align-items: center;
-    gap: 10px;
-    background-color: #ffffff; /* Putih transparan */
-    color: #008774;
-    padding: 8px 20px;
-    border-radius: 8px;
-    border: 1px solid #008774; /* Border tipis transparan */
+    gap: 8px;
+    background-color: #FFFFFF;
+    color: var(--accent-color); /* Teks warna hijau BOMA */
+    padding: 8px 24px;
+    border-radius: 50px; /* Wajib lonjong biar modern */
+    border: none;
+    font-size: 13px;
+    font-weight: 700;
     cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    backdrop-filter: blur(5px); /* Efek blur kaca */
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Kasih bayangan halus */
+    transition: 0.2s;
 }
 
 .search-btn:hover {
-    background-color: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.5);
-    transform: translateY(-2px); /* Efek melayang dikit */
+    background-color: #f3f4f6;
+    transform: scale(1.05); /* Membesar dikit pas di-hover */
 }
 
 /* ==========================================
@@ -483,29 +482,28 @@ a {
    9. NEW FOOTER (4 Columns Green)
    ========================================== */
 .site-footer {
-    padding: 64px 0 32px 0;
-    margin-top: 48px;
+    background-color: #00967A; /* Warna hijau khas BOMA */
+    color: #FFFFFF;
+    padding: 80px 0;
+    font-family: 'Inter', sans-serif;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr; /* Pembagian kolom sesuai mockup */
+    gap: 40px;
 }
 
 .footer-col h4 {
-    color: #FFFFFF;
-    margin-bottom: 24px;
     font-size: 18px;
-}
-
-.footer-col p, .footer-col ul {
-    color: #D1D5DB;
-    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #FFFFFF;
 }
 
 .footer-col ul {
     list-style: none;
+    padding: 0;
 }
 
 .footer-col ul li {
@@ -513,44 +511,75 @@ a {
 }
 
 .footer-col ul li a {
-    transition: color 0.3s;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
 .footer-col ul li a:hover {
     color: #FFFFFF;
+    padding-left: 5px;
 }
 
-.social-icons {
-    display: flex;
-    gap: 16px;
-    font-size: 20px;
-}
-
+/* Style Input Email (Glassmorphism Style) */
 .footer-subscribe {
+    position: relative;
     display: flex;
-    background: rgba(255,255,255,0.1);
-    border-radius: 4px;
-    padding: 4px;
+    align-items: center;
 }
 
 .footer-subscribe input {
-    background: transparent;
-    border: none;
-    color: white;
-    padding: 8px 12px;
     width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.2); /* Transparan putih */
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
     outline: none;
 }
 
 .footer-subscribe input::placeholder {
-    color: #9CA3AF;
+    color: rgba(255, 255, 255, 0.6);
 }
 
-.footer-subscribe button {
-    background: transparent;
-    color: white;
+.send-btn {
+    position: absolute;
+    right: 10px;
+    background: none;
     border: none;
-    padding: 8px 16px;
+    color: white;
     cursor: pointer;
-    font-weight: 600;
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.send-btn:hover {
+    opacity: 1;
+}
+
+/* Sosmed Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-btn {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.social-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
 }
