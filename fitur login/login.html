@@ -68,4 +68,27 @@
     </div>
 
 </body>
+<script>
+    const modal = document.getElementById('modalKegiatan');
+    const dateCells = document.querySelectorAll('.date-cell');
+
+    // Munculin modal pas tanggal diklik
+    dateCells.forEach(cell => {
+        cell.onclick = function() {
+            modal.style.display = 'flex';
+        }
+    });
+
+    // Tutup modal
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    // Tutup modal kalau klik di luar area kotak putih
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+</script>
 </html>

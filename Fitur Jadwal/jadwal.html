@@ -43,7 +43,6 @@
 
         <section class="container" style="padding-bottom: 80px;">
             <div class="calendar-card">
-                
                 <div class="calendar-nav">
                     <button class="nav-arrow">&#10094;</button> <h2 class="calendar-month">APRIL 2026</h2>
                     <button class="nav-arrow">&#10095;</button> </div>
@@ -131,5 +130,55 @@
         </div>
     </footer>
 
+    <div id="modalKegiatan" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 id="modalTitle">Daftar Kegiatan</h2>
+                <p id="modalSub">Selasa, 14 April 2026</p>
+            </div>
+
+            <div id="stepKonfirmasi" class="modal-content-card">
+                <h3>Apakah Anda Ingin Mengikuti Latihan?</h3>
+                
+                <div class="activity-detail">
+                    <img src="../src/Basket.png" alt="Latihan Basket" class="activity-img">
+                    
+                    <div class="activity-info">
+                        <p><strong>Agenda Kegiatan :</strong><br>Latihan Basket</p>
+                        <p><strong>Waktu :</strong><br>Selasa, 14 April 2026</p>
+                        <p><strong>Tempat :</strong><br>Lapangan Kampus UPI di Cibiru</p>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn-confirm-yes" onclick="showFormDiri()">Ya</button>
+                    <button class="btn-confirm-no" onclick="closeModal()">Tidak</button>
+                </div>
+            </div>
+
+            <div id="stepDataDiri" class="modal-content-card" style="display: none;">
+                <h3>Silahkan Isi Data Diri Anda</h3>
+                <form class="form-diri">
+                    <div class="form-group-modal">
+                        <label>Nama Lengkap</label>
+                        <input type="text" placeholder="masukkan nama anda">
+                    </div>
+                    <div class="form-group-modal">
+                        <label>Program Studi</label>
+                        <input type="text" placeholder="contoh: RPL">
+                    </div>
+                    <div class="form-group-modal">
+                        <label>Angkatan</label>
+                        <input type="text" placeholder="contoh: 2024">
+                    </div>
+                    <div class="modal-actions">
+                        <button type="submit" class="btn-confirm-yes">Benar, Ikut!</button>
+                        <button type="button" class="btn-confirm-no" onclick="closeModal()">Tidak</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<script src="../js/jadwal.js"></script>
 </body>
 </html>
