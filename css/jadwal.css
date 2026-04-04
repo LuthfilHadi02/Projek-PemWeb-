@@ -44,26 +44,39 @@ a {
 }
 
 /* ==========================================
-   NAVBAR
+   2. NAVBAR (FIXED)
    ========================================== */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+<<<<<<< HEAD
     padding: 0 24px; 
     background-color: var(--accent-color);
     border-bottom: 1px solid var(--border-color);
     height: 80px; 
+=======
+    padding: 0 40px; /* Padding atas bawah dihapus karena pakai height */
+    height: 80px;    /* Samain tingginya biar konsisten antar halaman */
+    color: #FFFFFF;
+>>>>>>> fcd155e30dc73a30b9e796c98ba09bb629152547
 }
 
+/* Wajib ada wadah ini di HTML biar jaraknya gak rapet */
 .nav-links {
     display: flex;
+<<<<<<< HEAD
     gap: 32px; 
     height: 100%; 
+=======
+    gap: 32px;
+    height: 100%; /* Biar link-nya penuh setinggi navbar */
+>>>>>>> fcd155e30dc73a30b9e796c98ba09bb629152547
     align-items: center;
 }
 
 .nav-links a {
+<<<<<<< HEAD
     font-size: 14px;
     font-weight: 500;
     position: relative;
@@ -101,8 +114,56 @@ a {
 .nav-links a:hover::after,
 .nav-links a.active::after {
     width: 100%;
+=======
+    font-size: 14px; /* Sedikit lebih besar biar kebaca */
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    transition: 0.3s;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
+/* Animasi Garis Bawah Putih */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 20px; /* Jarak dari bawah teks */
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #FFFFFF;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+    color: #FFFFFF;
+    font-weight: 600;
+>>>>>>> fcd155e30dc73a30b9e796c98ba09bb629152547
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.search-btn {
+    background-color: #FFFFFF;
+    color: var(--accent-color);
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.search-btn:hover {
+    transform: scale(1.05); /* Efek dikit pas hover tombol */
+}
 .search-btn {
     background-color: #FFFFFF;
     color: var(--accent-color);
