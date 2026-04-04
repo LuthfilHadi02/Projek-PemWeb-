@@ -252,37 +252,43 @@ a {
     display: block;
     text-align: center;
 }
-/* MODAL OVERLAY (Background Gelap) */
+/* ==========================================
+   STYLING MODAL (KONFIRMASI & DATA DIRI)
+   ========================================== */
+
+/* 1. Overlay Latar Belakang */
 .modal-overlay {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: none; /* Sembunyi dulu, muncul pas diklik */
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* Muncul via JS */
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 9999;
+    backdrop-filter: blur(2px);
 }
 
-/* CONTAINER MODAL */
+/* 2. Container Utama Modal */
 .modal-container {
-    width: 90%;
-    max-width: 700px;
-    background-color: #00967A; /* Hijau Teal BOMA */
-    border-radius: 40px;
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 650px;
+    background-color: #00967A; /* Hijau Utama BOMA */
+    border-radius: 40px; /* Lengkungan Luar */
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
 }
 
-/* HEADER MODAL */
+/* 3. Header Teks (Putih) */
 .modal-header {
-    padding: 30px 40px;
-    color: white;
+    text-align: left;
+    color: #FFFFFF;
+    padding: 10px 15px 25px 15px;
 }
 
 .modal-header h2 {
-    font-size: 28px;
-    margin-bottom: 5px;
+    font-size: 24px;
+    font-weight: 800;
 }
 
 .modal-header p {
@@ -290,184 +296,114 @@ a {
     opacity: 0.9;
 }
 
-/* KARTU ISI MODAL */
+/* 4. Kartu Konten (Bagian Mint) */
 .modal-content-card {
-    background-color: #E6F4F1; /* Background mint pucat */
-    margin: 0 15px 15px 15px;
-    border-radius: 35px;
-    padding: 40px;
+    background-color: #F8FAFC; /* Putih bersih agak soft biar elegan */
+    padding: 45px 30px 30px 30px;
+    border-radius:0 0 40px 40px;
     text-align: center;
+    position: relative;
 }
 
+/* 5. Judul Floating (Box Hijau Gelap) */
 .modal-content-card h3 {
-    color: white;
-    background-color: #008774; /* Box judul melayang */
+    background-color: #006B5E; /* Hijau Gelap */
+    color: #FFFFFF;
     display: inline-block;
-    padding: 15px 30px;
+    padding: 12px 35px;
     border-radius: 50px;
-    font-size: 18px;
-    margin-top: -65px; /* Biar numpuk ke atas */
-    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* DETAIL KEGIATAN */
-.activity-detail {
-    display: flex;
-    gap: 30px;
-    text-align: left;
-    background-color: #008774; /* Box hijau di dalam */
-    padding: 25px;
+/* 6. Layout Form & Detail Kegiatan */
+.activity-detail, .form-diri {
+    background-color: #006B5E; /* Hijau Gelap */
     border-radius: 25px;
-    color: white;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.activity-detail {
+    flex-direction: row; /* Gambar di samping teks untuk Konfirmasi */
     align-items: center;
 }
 
-.activity-img {
-    width: 200px;
-    height: 160px;
-    border-radius: 20px;
-    object-fit: cover;
-}
-
-.activity-info p {
-    font-size: 14px;
-    margin-bottom: 12px;
-}
-
-.activity-info strong {
-    font-size: 16px;
-}
-
-/* TOMBOL AKSI */
-.modal-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 15px;
-    margin-top: 25px;
-}
-
-.btn-confirm-yes, .btn-confirm-no {
-    padding: 10px 30px;
-    border-radius: 20px;
-    border: none;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn-confirm-yes {
-    background-color: #E6F4F1;
-    color: #008774;
-}
-
-.btn-confirm-no {
-    background-color: #FF4B4B; /* Merah sesuai gambar */
-    color: white;
-}
-
-.btn-confirm-yes:hover { background-color: #FFFFFF; }
-.btn-confirm-no:hover { background-color: #D32F2F; }
-.form-diri { text-align: left; display: flex; flex-direction: column; gap: 15px; }
-.form-group-modal label { display: block; color: #008774; font-size: 14px; margin-bottom: 5px; font-weight: 600; }
-.form-group-modal input { 
-    width: 100%; padding: 15px; border: none; border-radius: 15px; 
-    background-color: #E6F4F1; font-size: 14px; outline: none; 
-}
-
-/* ==========================================
-   STYLING FORM DATA DIRI (MATCH DESIGN)
-   ========================================== */
-
-/* Kontainer putih di dalam modal */
-#stepDataDiri.modal-content-card {
-    background-color: #008774; /* Mint pucat */
-    border-radius: 40px;
-    padding: 40px;
-}
-
-/* Judul Silahkan Isi Data Diri Anda */
-#stepDataDiri h3 {
-    color: #FFFFFF;
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-/* Layout Form */
-.form-diri {
+/* 7. Styling Form Input */
+.form-group-modal {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-}
-
-/* Grup Label & Input */
-.form-group-modal {
-    text-align: left;
+    gap: 5px;
 }
 
 .form-group-modal label {
-    display: block;
-    color: #FFFFFF; /* Teks label putih */
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 8px;
+    color: #FFFFFF;
+    font-size: 13px;
     margin-left: 5px;
 }
 
-/* Kotak Input */
 .form-group-modal input {
     width: 100%;
-    padding: 16px 25px;
+    padding: 14px 20px;
     border: none;
-    border-radius: 20px; /* Sangat melengkung sesuai gambar */
-    background-color: #D1EBE7; /* Warna background input sesuai gambar */
-    color: #008774; /* Warna teks di dalam input */
-    font-size: 15px;
-    font-weight: 500;
+    border-radius: 15px;
+    background-color: #D1EBE7; /* Senada dengan background modal */
+    color: #006B5E;
+    font-weight: 600;
     outline: none;
 }
 
-.form-group-modal input::placeholder {
-    color: rgba(0, 135, 116, 0.5);
+/* 8. Gambar Kegiatan */
+.activity-img {
+    width: 180px;
+    height: 120px;
+    border-radius: 15px;
+    object-fit: cover;
 }
 
-/* Baris Tombol */
+.activity-info {
+    color: #FFFFFF;
+}
+
+/* 9. Tombol Aksi (Kanan Bawah) */
 .modal-actions {
     display: flex;
     justify-content: flex-end;
-    gap: 12px;
-    margin-top: 30px;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-/* Tombol Benar, Ikut! */
 .btn-confirm-yes {
-    background-color: #FFFFFF; /* Putih/Mint sangat terang */
-    color: #008774;
-    padding: 12px 25px;
-    border-radius: 25px;
-    font-weight: 600;
-    font-size: 14px;
-    border: none;
+    background-color: #D1EBE7;
+    color: #006B5E;
+    border: 1.5px solid #006B5E;
+    padding: 8px 30px;
+    border-radius: 12px;
+    font-weight: 700;
     cursor: pointer;
     transition: 0.3s;
 }
 
-/* Tombol Tidak */
 .btn-confirm-no {
-    background-color: #FF4B4B; /* Merah sesuai gambar */
+    background-color: #FF5252; /* Merah sesuai gambar */
     color: #FFFFFF;
-    padding: 12px 25px;
-    border-radius: 25px;
-    font-weight: 600;
-    font-size: 14px;
     border: none;
+    padding: 8px 30px;
+    border-radius: 12px;
+    font-weight: 700;
     cursor: pointer;
-    transition: 0.3s;
 }
 
-.btn-confirm-yes:hover { opacity: 0.9; }
-.btn-confirm-no:hover { background-color: #E63939; }
+.btn-confirm-yes:hover { background-color: #006B5E; color: white; }
 /* ==========================================
    FOOTER
    ========================================== */
