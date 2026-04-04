@@ -53,6 +53,9 @@ a {
     display: block;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 /* ==========================================
    2. VISI MISI SECTION
    ========================================== */
@@ -168,14 +171,38 @@ a {
 }
 
 .search-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antara icon dan teks */
     background-color: #FFFFFF;
-    color: var(--accent-color);
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 600;
+    color: var(--accent-color); /* Hijau khas BOMA */
+    padding: 10px 24px;
+    border-radius: 50px; /* Membuat bentuk pill/oval */
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
     border: none;
     cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Shadow halus agar terlihat premium */
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    transform: translateY(-2px); /* Efek melayang saat di-hover */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    background-color: #f8fafc;
+}
+
+.search-btn:active {
+    transform: translateY(0); /* Efek menekan saat diklik */
+}
+
+.search-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.search-btn:hover svg {
+    transform: scale(1.1); /* Icon sedikit membesar saat hover */
 }
 
 /* ==========================================
