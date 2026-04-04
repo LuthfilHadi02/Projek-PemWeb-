@@ -163,26 +163,25 @@ a {
 /* ==========================================
    KALENDER UI
    ========================================== */
+/* Container Utama Kalender */
 .calendar-card {
-    background-color: var(--calendar-bg);
-    border-radius: 24px;
-    padding: 40px 60px;
-    max-width: 850px;
-    margin: 0 auto 80px auto;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    background-color: #E6F4F1; /* Background mint pucat sesuai gambar */
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .calendar-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 32px;
-    padding: 0 16px;
+    margin-bottom: 30px;
+    color: #008774; /* Warna Teal BOMA */
 }
 
 .calendar-month {
     font-size: 24px;
-    color: var(--accent-color);
+    font-weight: 800;
     letter-spacing: 1px;
 }
 
@@ -190,60 +189,69 @@ a {
     background: none;
     border: none;
     font-size: 24px;
-    color: var(--accent-color);
+    color: #008774;
     cursor: pointer;
     font-weight: bold;
 }
 
+/* Grid Kalender */
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 12px;
+    gap: 12px; /* Jarak antar kotak */
 }
 
+/* Nama Hari */
 .day-name {
-    background-color: var(--accent-color);
-    color: #FFFFFF;
+    background-color: #00967A;
+    color: white;
+    padding: 10px;
     text-align: center;
-    font-weight: 500;
-    font-size: 13px;
-    padding: 8px 0;
-    border-radius: 50px;
-    margin-bottom: 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
+/* Kotak Tanggal Biasa */
 .date-cell {
-    background-color: var(--accent-color);
-    color: #FFFFFF;
-    text-align: center;
-    font-weight: 600;
-    font-size: 18px;
-    padding: 14px 8px;
-    border-radius: 8px;
+    background-color: #00967A; /* Hijau solid */
+    color: white;
+    aspect-ratio: 1.5 / 1; /* Biar bentuknya kotak agak lebar sesuai gambar */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 64px;
+    border-radius: 15px; /* Rounded pojok-pojoknya */
+    font-weight: 700;
+    font-size: 18px;
+    transition: transform 0.2s;
     cursor: pointer;
 }
 
+.date-cell:hover {
+    transform: scale(1.05);
+}
+
+/* Tanggal Bulan Lain (Pudar) */
 .date-cell.faded {
-    background-color: var(--calendar-faded);
+    background-color: #B2DFD7; /* Hijau pudar */
     color: #FFFFFF;
 }
 
+/* Tanggal dengan Event (Warna Gelap) */
 .date-cell.dark-event {
-    background-color: var(--event-dark);
+    background-color: #004D40; /* Hijau tua gelap */
 }
 
+/* Teks kecil di bawah tanggal */
 .tiny-text {
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 400;
-    opacity: 0.8;
     margin-top: 4px;
+    display: block;
+    text-align: center;
 }
-
 /* ==========================================
    FOOTER
    ========================================== */
