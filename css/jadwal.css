@@ -253,47 +253,21 @@ a {
     text-align: center;
 }
 /* ==========================================
-<<<<<<< HEAD
-   STYLING MODAL (KONFIRMASI & DATA DIRI)
-   ========================================== */
-
-/* 1. Overlay Latar Belakang */
-=======
    STYLING MODAL (MATCHING FIGMA SCREENSHOT)
    ========================================== */
 
 /* Overlay Background Gelap */
->>>>>>> 86d3b43ce2b4ac3271035069f1ee0a24dd76e0c7
 .modal-overlay {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-<<<<<<< HEAD
-    background: rgba(0, 0, 0, 0.5);
-    display: none; /* Muncul via JS */
-=======
     background: rgba(0, 0, 0, 0.6);
     display: none; 
->>>>>>> 86d3b43ce2b4ac3271035069f1ee0a24dd76e0c7
     justify-content: center;
     align-items: center;
-    z-index: 9999;
-    backdrop-filter: blur(2px);
+    z-index: 1000;
 }
 
-<<<<<<< HEAD
-/* 2. Container Utama Modal */
-.modal-container {
-    width: 100%;
-    max-width: 650px;
-    background-color: #00967A; /* Hijau Utama BOMA */
-    border-radius: 40px; /* Lengkungan Luar */
-    position: relative;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-}
-
-/* 3. Header Teks (Putih) */
-=======
 /* Container Utama Modal */
 .modal-container {
     width: 90%;
@@ -305,21 +279,14 @@ a {
 }
 
 /* Header Modal (Daftar Kegiatan) */
->>>>>>> 86d3b43ce2b4ac3271035069f1ee0a24dd76e0c7
 .modal-header {
-    text-align: left;
-    color: #FFFFFF;
-    padding: 10px 15px 25px 15px;
+    padding: 30px 40px;
+    color: white;
 }
 
 .modal-header h2 {
-<<<<<<< HEAD
-    font-size: 24px;
-    font-weight: 800;
-=======
     font-size: 26px;
     margin-bottom: 5px;
->>>>>>> 86d3b43ce2b4ac3271035069f1ee0a24dd76e0c7
 }
 
 .modal-header p {
@@ -328,60 +295,6 @@ a {
     opacity: 0.9;
 }
 
-<<<<<<< HEAD
-/* 4. Kartu Konten (Bagian Mint) */
-.modal-content-card {
-    background-color: #F8FAFC; /* Putih bersih agak soft biar elegan */
-    padding: 45px 30px 30px 30px;
-    border-radius:0 0 40px 40px;
-    text-align: center;
-    position: relative;
-}
-
-/* 5. Judul Floating (Box Hijau Gelap) */
-.modal-content-card h3 {
-    background-color: #006B5E; /* Hijau Gelap */
-    color: #FFFFFF;
-    display: inline-block;
-    padding: 12px 35px;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: 700;
-    position: absolute;
-    top: -22px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 85%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* 6. Layout Form & Detail Kegiatan */
-.activity-detail, .form-diri {
-    background-color: #006B5E; /* Hijau Gelap */
-    border-radius: 25px;
-    padding: 20px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.activity-detail {
-    flex-direction: row; /* Gambar di samping teks untuk Konfirmasi */
-    align-items: center;
-}
-
-/* 7. Styling Form Input */
-.form-group-modal {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.form-group-modal label {
-    color: #FFFFFF;
-    font-size: 13px;
-=======
 /* Wrapper Bawah (Background Mint Terang) */
 .modal-body-wrapper {
     background-color: #EBF5F3; /* Hijau super muda */
@@ -457,73 +370,11 @@ a {
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 8px;
->>>>>>> 86d3b43ce2b4ac3271035069f1ee0a24dd76e0c7
     margin-left: 5px;
 }
 
 .form-group-modal input {
     width: 100%;
-<<<<<<< HEAD
-    padding: 14px 20px;
-    border: none;
-    border-radius: 15px;
-    background-color: #D1EBE7; /* Senada dengan background modal */
-    color: #006B5E;
-    font-weight: 600;
-    outline: none;
-}
-
-/* 8. Gambar Kegiatan */
-.activity-img {
-    width: 180px;
-    height: 120px;
-    border-radius: 15px;
-    object-fit: cover;
-}
-
-.activity-info {
-    color: #FFFFFF;
-}
-
-/* 9. Tombol Aksi (Kanan Bawah) */
-.modal-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.btn-confirm-yes {
-    background-color: #D1EBE7;
-    color: #006B5E;
-    border: 1.5px solid #006B5E;
-    padding: 8px 30px;
-    border-radius: 12px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn-confirm-no {
-    background-color: #FF5252; /* Merah sesuai gambar */
-    color: #FFFFFF;
-    border: none;
-    padding: 8px 30px;
-    border-radius: 12px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.btn-confirm-yes:hover { background-color: #006B5E; color: white; }
-/* ==========================================
-   FOOTER
-   ========================================== */
-.site-footer {
-    background-color: var(--accent-color);
-    color: #FFFFFF;
-    padding: 60px 0 40px 0;
-}
-=======
     padding: 15px 20px;
     border: none;
     border-radius: 12px;
@@ -567,7 +418,6 @@ a {
 
 .btn-confirm-yes:hover { background-color: #FFFFFF; }
 .btn-confirm-no:hover { background-color: #E63939; }
->>>>>>> 86d3b43ce2b4ac3271035069f1ee0a24dd76e0c7
 
 /* Responsive HP */
 @media (max-width: 650px) {
