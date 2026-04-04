@@ -252,306 +252,180 @@ a {
     display: block;
     text-align: center;
 }
-/* MODAL OVERLAY (Background Gelap) */
+/* ==========================================
+   STYLING MODAL (MATCHING FIGMA SCREENSHOT)
+   ========================================== */
+
+/* Overlay Background Gelap */
 .modal-overlay {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.6);
-    display: none; /* Sembunyi dulu, muncul pas diklik */
+    display: none; 
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
 
-/* CONTAINER MODAL */
+/* Container Utama Modal */
 .modal-container {
     width: 90%;
-    max-width: 700px;
-    background-color: #00967A; /* Hijau Teal BOMA */
+    max-width: 800px; /* Lebar dilegain biar mirip SS */
+    background-color: #008774; /* Warna Header (Teal Gelap) */
     border-radius: 40px;
     overflow: hidden;
     box-shadow: 0 20px 50px rgba(0,0,0,0.3);
 }
 
-/* HEADER MODAL */
+/* Header Modal (Daftar Kegiatan) */
 .modal-header {
     padding: 30px 40px;
     color: white;
 }
 
 .modal-header h2 {
-    font-size: 28px;
+    font-size: 26px;
     margin-bottom: 5px;
 }
 
 .modal-header p {
     font-size: 14px;
+    font-weight: 400;
     opacity: 0.9;
 }
 
-/* KARTU ISI MODAL */
-.modal-content-card {
-    background-color: #E6F4F1; /* Background mint pucat */
-    margin: 0 15px 15px 15px;
-    border-radius: 35px;
-    padding: 40px;
-    text-align: center;
+/* Wrapper Bawah (Background Mint Terang) */
+.modal-body-wrapper {
+    background-color: #EBF5F3; /* Hijau super muda */
+    padding: 30px 40px 40px 40px;
 }
 
-.modal-content-card h3 {
+/* Kartu Hijau Gelap di Dalam (Card in Card) */
+.inner-green-card {
+    background-color: #008774; /* Teal Gelap */
+    border-radius: 35px;
+    padding: 40px;
     color: white;
-    background-color: #008774; /* Box judul melayang */
-    display: inline-block;
-    padding: 15px 30px;
-    border-radius: 50px;
-    font-size: 18px;
-    margin-top: -65px; /* Biar numpuk ke atas */
+}
+
+/* Judul di dalam Kartu */
+.card-title {
+    text-align: center;
+    font-size: 22px;
     margin-bottom: 30px;
 }
 
-/* DETAIL KEGIATAN */
-.activity-detail {
+/* --- LAYOUT STEP 1 (KONFIRMASI) --- */
+.activity-flex {
     display: flex;
     gap: 30px;
-    text-align: left;
-    background-color: #008774; /* Box hijau di dalam */
-    padding: 25px;
-    border-radius: 25px;
-    color: white;
-    align-items: center;
+    align-items: stretch; /* Biar tinggi teks nyamain tinggi gambar */
 }
 
 .activity-img {
-    width: 200px;
-    height: 160px;
+    width: 260px;
+    height: 170px;
     border-radius: 20px;
     object-fit: cover;
 }
 
-.activity-info p {
-    font-size: 14px;
-    margin-bottom: 12px;
-}
-
-.activity-info strong {
-    font-size: 16px;
-}
-
-/* TOMBOL AKSI */
-.modal-actions {
+/* Kolom Kanan (Teks + Tombol) */
+.activity-info-col {
     display: flex;
-    justify-content: flex-end;
-    gap: 15px;
-    margin-top: 25px;
+    flex-direction: column;
+    justify-content: space-between; /* Teks di atas, tombol dorong ke bawah */
+    flex: 1;
 }
 
-.btn-confirm-yes, .btn-confirm-no {
-    padding: 10px 30px;
-    border-radius: 20px;
-    border: none;
+.text-info p {
+    font-size: 15px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.text-info strong {
+    font-size: 16px;
     font-weight: 700;
-    cursor: pointer;
-    transition: 0.3s;
+    display: inline-block;
+    margin-bottom: 2px;
 }
 
-.btn-confirm-yes {
-    background-color: #E6F4F1;
-    color: #008774;
-}
-
-.btn-confirm-no {
-    background-color: #FF4B4B; /* Merah sesuai gambar */
-    color: white;
-}
-
-.btn-confirm-yes:hover { background-color: #FFFFFF; }
-.btn-confirm-no:hover { background-color: #D32F2F; }
-.form-diri { text-align: left; display: flex; flex-direction: column; gap: 15px; }
-.form-group-modal label { display: block; color: #008774; font-size: 14px; margin-bottom: 5px; font-weight: 600; }
-.form-group-modal input { 
-    width: 100%; padding: 15px; border: none; border-radius: 15px; 
-    background-color: #E6F4F1; font-size: 14px; outline: none; 
-}
-
-/* ==========================================
-   STYLING FORM DATA DIRI (MATCH DESIGN)
-   ========================================== */
-
-/* Kontainer putih di dalam modal */
-#stepDataDiri.modal-content-card {
-    background-color: #008774; /* Mint pucat */
-    border-radius: 40px;
-    padding: 40px;
-}
-
-/* Judul Silahkan Isi Data Diri Anda */
-#stepDataDiri h3 {
-    color: #FFFFFF;
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-/* Layout Form */
+/* --- LAYOUT STEP 2 (FORM DATA DIRI) --- */
 .form-diri {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
+    max-width: 650px;
+    margin: 0 auto;
 }
 
-/* Grup Label & Input */
 .form-group-modal {
     text-align: left;
 }
 
 .form-group-modal label {
     display: block;
-    color: #FFFFFF; /* Teks label putih */
+    color: white; /* Label warna putih */
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 8px;
     margin-left: 5px;
 }
 
-/* Kotak Input */
 .form-group-modal input {
     width: 100%;
-    padding: 16px 25px;
+    padding: 15px 20px;
     border: none;
-    border-radius: 20px; /* Sangat melengkung sesuai gambar */
-    background-color: #D1EBE7; /* Warna background input sesuai gambar */
-    color: #008774; /* Warna teks di dalam input */
+    border-radius: 12px;
+    background-color: #EBF5F3; /* Warna mint terang buat input */
+    color: #008774; /* Teks ketikan warna teal */
     font-size: 15px;
     font-weight: 500;
     outline: none;
 }
 
 .form-group-modal input::placeholder {
-    color: rgba(0, 135, 116, 0.5);
+    color: rgba(0, 135, 116, 0.6); /* Warna placeholder menyesuaikan SS */
 }
 
-/* Baris Tombol */
+/* --- TOMBOL AKSI UMUM --- */
 .modal-actions {
     display: flex;
-    justify-content: flex-end;
-    gap: 12px;
-    margin-top: 30px;
+    justify-content: flex-end; /* Posisi di kanan */
+    gap: 15px;
 }
 
-/* Tombol Benar, Ikut! */
+.btn-confirm-yes, .btn-confirm-no {
+    padding: 10px 25px;
+    border-radius: 25px;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
 .btn-confirm-yes {
-    background-color: #FFFFFF; /* Putih/Mint sangat terang */
+    background-color: #EBF5F3;
     color: #008774;
-    padding: 12px 25px;
-    border-radius: 25px;
-    font-weight: 600;
-    font-size: 14px;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
 }
 
-/* Tombol Tidak */
 .btn-confirm-no {
-    background-color: #FF4B4B; /* Merah sesuai gambar */
-    color: #FFFFFF;
-    padding: 12px 25px;
-    border-radius: 25px;
-    font-weight: 600;
-    font-size: 14px;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
+    background-color: #FF4B4B;
+    color: white;
 }
 
-.btn-confirm-yes:hover { opacity: 0.9; }
+.btn-confirm-yes:hover { background-color: #FFFFFF; }
 .btn-confirm-no:hover { background-color: #E63939; }
-/* ==========================================
-   FOOTER
-   ========================================== */
-.site-footer {
-    background-color: var(--accent-color);
-    color: #FFFFFF;
-    padding: 60px 0 40px 0;
-}
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
-    gap: 32px;
+/* Responsive HP */
+@media (max-width: 650px) {
+    .activity-flex {
+        flex-direction: column;
+    }
+    .activity-img {
+        width: 100%;
+        height: auto;
+    }
 }
-
-.footer-col h4 {
-    color: #FFFFFF;
-    margin-bottom: 24px;
-    font-size: 16px;
-}
-
-.footer-col p, .footer-col ul {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 13px;
-}
-
-.footer-col ul {
-    list-style: none;
-}
-
-.footer-col ul li {
-    margin-bottom: 12px;
-}
-
-.footer-col ul li a {
-    transition: 0.3s;
-}
-
-.footer-col ul li a:hover {
-    color: #FFFFFF;
-}
-
-.social-icons {
-    display: flex;
-    gap: 16px;
-    margin-top: 16px;
-}
-
-.social-icons a {
-    background: rgba(255, 255, 255, 0.2);
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    color: white;
-}
-
-.footer-subscribe {
-    display: flex;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-    padding: 4px;
-}
-
-.footer-subscribe input {
-    background: transparent;
-    border: none;
-    color: white;
-    padding: 8px 12px;
-    width: 100%;
-    outline: none;
-}
-
-.footer-subscribe input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.footer-subscribe button {
-    background: transparent;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-    font-weight: 600;
-}   

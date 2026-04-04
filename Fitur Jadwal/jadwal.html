@@ -130,52 +130,67 @@
         </div>
     </footer>
 
-    <div id="modalKegiatan" class="modal-overlay">
+<div id="modalKegiatan" class="modal-overlay">
         <div class="modal-container">
+            
+            <!-- Header Atas (Hijau Tua) -->
             <div class="modal-header">
                 <h2 id="modalTitle">Daftar Kegiatan</h2>
-                <p id="modalSub">Selasa, 14 April 2026</p>
+                <p id="modalSub">Selasa, 20 Maret 2026</p>
             </div>
 
-            <div id="stepKonfirmasi" class="modal-content-card">
-                <h3>Apakah Anda Ingin Mengikuti Latihan?</h3>
+            <!-- Pembungkus Bawah (Background Mint Terang) -->
+            <div class="modal-body-wrapper">
                 
-                <div class="activity-detail">
-                    <img src="../src/Basket.png" alt="Latihan Basket" class="activity-img">
+                <!-- STEP 1: KONFIRMASI (Kotak Hijau Tua Dalam) -->
+                <div id="stepKonfirmasi" class="inner-green-card">
+                    <h3 class="card-title">Apakah Anda Ingin Mengikuti Latihan?</h3>
                     
-                    <div class="activity-info">
-                        <p><strong>Agenda Kegiatan :</strong><br>Latihan Basket</p>
-                        <p><strong>Waktu :</strong><br>Selasa, 14 April 2026</p>
-                        <p><strong>Tempat :</strong><br>Lapangan Kampus UPI di Cibiru</p>
+                    <div class="activity-flex">
+                        <!-- Ganti fotonya sesuai yang lu butuhin -->
+                        <img src="../src/Futsal.png" alt="Latihan" class="activity-img">
+                        
+                        <div class="activity-info-col">
+                            <div class="text-info">
+                                <p><strong>Agenda Kegiatan :</strong><br>Latihan Futsal</p>
+                                <p><strong>Waktu :</strong><br>Selasa, 20 Maret 2026</p>
+                                <p><strong>Tempat :</strong><br>Lapangan Kampus UPI di Cibiru</p>
+                            </div>
+                            
+                            <!-- Tombol ditaruh di dalam flex biar nempel kanan bawah -->
+                            <div class="modal-actions">
+                                <button class="btn-confirm-yes" onclick="showFormDiri()">Ya</button>
+                                <button class="btn-confirm-no" onclick="closeModal()">Tidak</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="modal-actions">
-                    <button class="btn-confirm-yes" onclick="showFormDiri()">Ya</button>
-                    <button class="btn-confirm-no" onclick="closeModal()">Tidak</button>
+                <!-- STEP 2: DATA DIRI (Kotak Hijau Tua Dalam) -->
+                <div id="stepDataDiri" class="inner-green-card" style="display: none;">
+                    <h3 class="card-title">Silahkan Isi Data Diri Anda</h3>
+                    
+                    <form class="form-diri">
+                        <div class="form-group-modal">
+                            <label>Nama Lengkap</label>
+                            <input type="text" placeholder="Wisnu Firmansyah">
+                        </div>
+                        <div class="form-group-modal">
+                            <label>Program Studi</label>
+                            <input type="text" placeholder="PGSD">
+                        </div>
+                        <div class="form-group-modal">
+                            <label>Angkatan</label>
+                            <input type="text" placeholder="2027">
+                        </div>
+                        
+                        <div class="modal-actions" style="margin-top: 10px;">
+                            <button type="button" class="btn-confirm-yes"onclick="closeModal()">Benar, Ikut!</button>
+                            <button type="button" class="btn-confirm-no" onclick="closeModal()">Tidak</button>
+                        </div>
+                    </form>
                 </div>
-            </div>
 
-            <div id="stepDataDiri" class="modal-content-card" style="display: none;">
-                <h3>Silahkan Isi Data Diri Anda</h3>
-                <form class="form-diri">
-                    <div class="form-group-modal">
-                        <label>Nama Lengkap</label>
-                        <input type="text" placeholder="masukkan nama anda">
-                    </div>
-                    <div class="form-group-modal">
-                        <label>Program Studi</label>
-                        <input type="text" placeholder="contoh: RPL">
-                    </div>
-                    <div class="form-group-modal">
-                        <label>Angkatan</label>
-                        <input type="text" placeholder="contoh: 2024">
-                    </div>
-                    <div class="modal-actions">
-                        <button type="submit" class="btn-confirm-yes">Benar, Ikut!</button>
-                        <button type="button" class="btn-confirm-no" onclick="closeModal()">Tidak</button>
-                    </div>
-                </form>
             </div>
         </div>
     </div>
