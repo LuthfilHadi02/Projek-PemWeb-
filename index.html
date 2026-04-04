@@ -9,36 +9,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header class="navbar">
+    <header class="navbar bg-accent">
         <div class="logo-container">
-            <img src="public/logo-boma.png" alt="Logo BOMA" height="40">
+            <img src="public/logo-boma-white.png" alt="Logo BOMA" height="40">
         </div>
         
         <nav class="nav-links">
             <a href="#home">Home</a>
-            <a href="#category">Category</a>
-            <a href="#trending">Trending News</a>
-            <a href="#recent">Recent News</a>
-            <a href="#ranking">Clubs Ranking</a>
-            <a href="#articles">Sports Article</a>
+            <a href="#category">Profil</a>
+            <a href="#trending">Divisi</a>
+            <a href="#recent">Berita</a>
+            <a href="#ranking">Jadwal Latihan</a>
+            <a href="#articles">Tentang Kami</a>
         </nav>
 
-        <button class="search-btn">Search</button>
+        <button class="search-btn">🔍 Search</button>
     </header>
 
     <main>
         <section class="hero-section" id="home" style="background-image: url('public/hero-bg.jpg');">
             <div class="container hero-content">
-                <h1 class="hero-title">Sehatkan Badanmu,<br>Banggakan Kampusmu<br>Salam Olahraga</h1>
+                <div class="hero-left">
+                    <h1 class="hero-title">Sehatkan<br>Badanmu,<br>Banggakan<br>Kampusmu<br>Salam<br>Olahraga</h1>
+                </div>
                 
-                <div class="hero-desc-box">
-                    <p>Wadah terintegrasi untuk memantau jadwal pertandingan, statistik atlet, dan berita terbaru. Dukung terus divisi olahraga favoritmu dan jadilah saksi sejarah kebanggaan kampus.</p>
-                    <br>
-                    <button class="btn-primary">GABUNG BOMA</button>
+                <div class="hero-right">
+                    <div class="hero-desc-box">
+                        <p>Wadah terintegrasi untuk memantau jadwal pertandingan, statistik atlet, dan berita terbaru. Dukung terus divisi olahraga favoritmu dan jadilah saksi sejarah kebanggaan kampus.</p>
+                        <button class="btn-primary" style="margin-top: 16px;">GABUNG BOMA</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -75,40 +78,59 @@
         </section>
 
         <section class="section-padding container" id="trending">
-            <h2 class="section-title">Trending News</h2>
-            <div class="grid-2-cols">
-                
+            <div class="grid-2-cols" style="background: #F8FAFC; padding: 24px; border-radius: 8px;">
                 <div class="trending-list">
+                    <h2 class="section-title" style="margin-bottom: 24px;">Trending News</h2>
                     <article class="news-list-item">
                         <img src="public/news1.jpg" alt="News 1" class="news-list-img">
                         <div>
-                            <span style="font-size: 12px; color: #6b7280;">03 June 2026</span>
-                            <h3 style="font-size: 16px; margin-top: 4px;">A 6-Year-Old Horse Dies at Belmont Park</h3>
+                            <span class="meta-text">03 June 2026</span>
+                            <h3 class="news-list-title">A 6-Year-Old Horse Dies at Belmont Park</h3>
                         </div>
                     </article>
                     <article class="news-list-item">
                         <img src="public/news2.jpg" alt="News 2" class="news-list-img">
                         <div>
-                            <span style="font-size: 12px; color: #6b7280;">02 June 2026</span>
-                            <h3 style="font-size: 16px; margin-top: 4px;">Savilia Blunk Embraces Longer Season</h3>
+                            <span class="meta-text">02 June 2026</span>
+                            <h3 class="news-list-title">Savilia Blunk Embraces Longer Season</h3>
                         </div>
                     </article>
                     <article class="news-list-item">
                         <img src="public/news3.jpg" alt="News 3" class="news-list-img">
                         <div>
-                            <span style="font-size: 12px; color: #6b7280;">01 June 2026</span>
-                            <h3 style="font-size: 16px; margin-top: 4px;">Ryan Garcia is fighting again on media</h3>
+                            <span class="meta-text">01 June 2026</span>
+                            <h3 class="news-list-title">Ryan Garcia is fighting again on media</h3>
                         </div>
                     </article>
                 </div>
 
-                <article class="highlight-news" style="position: relative; border-radius: 8px; overflow: hidden;">
-                    <img src="public/cycling.jpg" alt="Cycling Highlight" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div style="position: absolute; bottom: 0; padding: 24px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); width: 100%; color: white;">
-                        <h2 style="color: white; font-size: 24px;">DISCOVER THE MEMBER BENEFITS OF USA CYCLING!</h2>
+                <article class="highlight-news">
+                    <img src="public/cycling.jpg" alt="Cycling Highlight" class="highlight-img">
+                    <div class="highlight-overlay">
+                        <span class="meta-text" style="color: white;">03 June 2026</span>
+                        <h2>DISCOVER THE MEMBER BENEFITS OF USA CYCLING!</h2>
                     </div>
                 </article>
+            </div>
+        </section>
 
+        <section class="container" style="margin-top: 40px; margin-bottom: 40px;">
+            <article class="highlight-news full-width-banner">
+                <img src="public/messi.jpg" alt="Messi" class="highlight-img">
+                <div class="highlight-overlay">
+                    <span class="meta-text" style="color: white;">04 June 2026</span>
+                    <h2 style="font-size: 32px; margin-bottom: 8px;">LIONEL MESSI LEAVING LIGUE 1 TEAM PARIS SAINT-GERMAIN, CLUB CONFIRMS</h2>
+                    <p style="color: #E5E7EB;">The EuroLeague Finals Top Scorer is the individual award for the player that gained the highest points in the EuroLeague Finals.</p>
+                </div>
+            </article>
+            
+            <div class="pagination">
+                <button class="page-btn disabled">←</button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">4</button>
+                <button class="page-btn">→</button>
             </div>
         </section>
 
@@ -117,9 +139,18 @@
                 
                 <div>
                     <h2 class="section-title">Recent News</h2>
-                    <div style="display: flex; gap: 16px;">
-                        <img src="public/recent1.jpg" alt="Recent" style="width: 150px; height: 150px; border-radius: 8px; object-fit: cover;">
-                        <img src="public/recent2.jpg" alt="Recent" style="width: 150px; height: 150px; border-radius: 8px; object-fit: cover;">
+                    <div class="recent-news-grid">
+                        <div class="recent-main">
+                            <img src="public/karate.jpg" alt="Karate">
+                            <div class="recent-overlay">
+                                <span>Baku 2023 World Taekwondo Championships</span>
+                            </div>
+                        </div>
+                        <div class="recent-side">
+                            <img src="public/side1.jpg" alt="Recent 1">
+                            <img src="public/side2.jpg" alt="Recent 2">
+                            <img src="public/side3.jpg" alt="Recent 3">
+                        </div>
                     </div>
                 </div>
 
@@ -149,6 +180,10 @@
                                 <td class="club-name-cell"><img src="public/logo-che.png" alt="Logo" width="24"> Chelsea</td>
                                 <td>38</td><td>21</td><td>11</td><td>6</td><td>76</td>
                             </tr>
+                            <tr>
+                                <td class="club-name-cell"><img src="public/logo-tot.png" alt="Logo" width="24"> Tottenham Hotspur</td>
+                                <td>38</td><td>22</td><td>5</td><td>11</td><td>71</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -159,11 +194,10 @@
         <section class="section-padding container" id="articles">
             <h2 class="section-title">Sports Article</h2>
             <div class="grid-3-cols">
-                
                 <article class="card">
                     <img src="public/article1.jpg" alt="Article 1" class="card-img">
                     <div class="card-content">
-                        <span style="font-size: 12px; color: #6b7280; margin-bottom: 8px;">04 June 2026</span>
+                        <span class="meta-text">04 June 2026</span>
                         <h2 class="card-title">5 Exercises Basketball Players Should Be Using</h2>
                         <p class="card-desc">Strength in basketball isn’t all about a massive body mass...</p>
                     </div>
@@ -172,7 +206,7 @@
                 <article class="card">
                     <img src="public/article2.jpg" alt="Article 2" class="card-img">
                     <div class="card-content">
-                        <span style="font-size: 12px; color: #6b7280; margin-bottom: 8px;">03 June 2026</span>
+                        <span class="meta-text">03 June 2026</span>
                         <h2 class="card-title">Golden Knights out to fulfill owner's quest</h2>
                         <p class="card-desc">The Vegas Golden Knights will play the Florida Panthers...</p>
                     </div>
@@ -181,40 +215,63 @@
                 <article class="card">
                     <img src="public/article3.jpg" alt="Article 3" class="card-img">
                     <div class="card-content">
-                        <span style="font-size: 12px; color: #6b7280; margin-bottom: 8px;">01 June 2026</span>
+                        <span class="meta-text">01 June 2026</span>
                         <h2 class="card-title">Outdoor Badminton Gets Support From Local</h2>
                         <p class="card-desc">The Badminton World Federation is developing Air Badminton...</p>
                     </div>
                 </article>
-
             </div>
-        </section>
-
-        <section class="container">
-            <div class="newsletter-section">
-                <div style="flex: 1;">
-                    <h2 class="hero-title" style="font-size: 36px; color: var(--text-primary);">NEWSLETTER<br>SUBSCRIPTION</h2>
-                    <br>
-                    <div style="display: flex;">
-                        <input type="email" placeholder="Alamat email aktif (Misal: mahasiswa@upi.edu)" class="newsletter-input">
-                        <button class="btn-primary" style="border-radius: 0 4px 4px 0;">></button>
-                    </div>
-                </div>
-                <div style="flex: 1; text-align: right;">
-                    <img src="public/newsletter-img.png" alt="Newsletter" style="max-height: 200px;">
-                </div>
+            
+            <div class="pagination" style="justify-content: flex-start; margin-top: 24px;">
+                <button class="page-btn disabled">←</button>
+                <button class="page-btn active" style="background: var(--text-primary); color: white;">→</button>
             </div>
         </section>
 
     </main>
 
-    <footer class="container footer">
-        <div style="display: flex; gap: 16px;">
-            <span>[ FB ]</span>
-            <span>[ IG ]</span>
-            <span>[ TW ]</span>
+    <footer class="site-footer bg-accent">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <p style="margin-bottom: 16px;">Copyright © 2026 BOMA.<br>All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#">🌐</a>
+                    <a href="#">📱</a>
+                    <a href="#">🐦</a>
+                    <a href="#">✉️</a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help center</a></li>
+                    <li><a href="#">Terms of service</a></li>
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">Status</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Stay up to date</h4>
+                <div class="footer-subscribe">
+                    <input type="email" placeholder="Your email address">
+                    <button>Send</button>
+                </div>
+            </div>
         </div>
-        <p>&copy; 2026 BOMA - Badan Olahraga Mahasiswa.</p>
     </footer>
 
 </body>
