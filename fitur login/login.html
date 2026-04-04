@@ -11,11 +11,11 @@
 
     <div class="login-split-wrapper">
         
-        <div class="login-split-left" style="background-image: url('../public/login-bg.jpg');">
-            <div class="login-dark-overlay">
-                <img src="../public/logo-boma-white.png" alt="Logo BOMA" class="login-center-logo">
-            </div>
+    <div class="login-split-left" style="background-image: url('../src/foto_login.jpeg');">
+        <div class="login-dark-overlay">
+            <img src="../src/Foto_LogoBoma.png" alt="Logo BOMA" class="login-center-logo">
         </div>
+    </div>
 
         <div class="login-split-right">
             <div class="login-form-box">
@@ -68,27 +68,4 @@
     </div>
 
 </body>
-<script>
-    const modal = document.getElementById('modalKegiatan');
-    const dateCells = document.querySelectorAll('.date-cell');
-
-    // Munculin modal pas tanggal diklik
-    dateCells.forEach(cell => {
-        cell.onclick = function() {
-            modal.style.display = 'flex';
-        }
-    });
-
-    // Tutup modal
-    function closeModal() {
-        modal.style.display = 'none';
-    }
-
-    // Tutup modal kalau klik di luar area kotak putih
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            closeModal();
-        }
-    }
-</script>
 </html>
