@@ -359,8 +359,6 @@ html {
     flex-grow: 1;
 }
 
-
-
 /* ==========================================
    9. FOOTER
    ========================================== */
@@ -463,4 +461,58 @@ html {
 
 .social-btn:hover {
     background: rgba(255, 255, 255, 0.3);
+}
+
+/* Tablet & Laptop Kecil */
+@media screen and (max-width: 1024px) {
+    .grid-3-cols {
+        grid-template-columns: repeat(2, 1fr); /* 3 kolom jadi 2 kolom */
+    }
+    .hero-title {
+        font-size: 40px;
+    }
+    .visi-misi-grid {
+        gap: 30px;
+        padding: 40px;
+    }
+}
+
+/* HP / Mobile */
+@media screen and (max-width: 480px) {
+    .nav-links {
+        display: none; /* Sembunyiin menu teks, nyisain logo & search */
+    }
+    
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .hero-title {
+        text-align: center;
+        font-size: 36px;
+    }
+    
+    .hero-right {
+        justify-content: center;
+    }
+    
+    .visi-misi-grid {
+        grid-template-columns: 1fr; /* Jadi 1 kolom atas bawah */
+        padding: 30px 20px;
+    }
+    
+    .grid-3-cols, .grid-2-cols {
+        grid-template-columns: 1fr; /* Card divisi & berita numpuk ke bawah */
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr; /* Footer numpuk ke bawah */
+        text-align: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
 }
