@@ -107,8 +107,7 @@ a {
     opacity: 0.8;
 }
 /* Biar garis muncul pas hover ATAU pas active */
-.nav-links a:hover::after,
-.nav-links a.active::after {
+.nav-links a:hover::after{
     width: 100%;
 }
  
@@ -590,67 +589,145 @@ a {
    RESPONSIVE MEDIA QUERIES (JADWAL.CSS)
    ========================================== */
 /* Tablet */
-@media screen and (max-width: 1024px) {
+/* ==========================================
+   3. RESPONSIVE DESIGN (BIAR AMAN DI HP & TABLET)
+   ========================================== */
+
+/* --- TABLET (Lebar layar max 992px) --- */
+@media (max-width: 992px) {
+    /* Footer dari 4 kolom kita jadiin 2 kolom biar ga sesak */
     .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr; 
     }
 }
 
-/* HP / Mobile */
-@media screen and (max-width: 480px) {
+/* --- SMARTPHONE (Lebar layar max 768px) --- */
+@media (max-width: 768px) {
+    
+/* Ganti bagian ini aja di dalem @media max-width 768px */
     .nav-links {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto; 
+        gap: 25px; /* Kasih jarak napas antar menu */
+        padding-bottom: 10px;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch; /* Biar swipe-nya licin kayak di app asli */
+    }
+
+    .nav-links a {
+        white-space: nowrap; /* Jangan turun ke bawah */
+        font-size: 14px;
+        flex-shrink: 0; /* INI KUNCINYA: Haram menciut/kegencet! */
+    }
+    
+    /* Sembunyiin scrollbar di menu navbar biar rapi */
+    .nav-links::-webkit-scrollbar {
         display: none;
     }
 
+    /* 2. HEADER TEXT */
+    .schedule-header {
+        padding: 40px 20px 20px 20px;
+    }
     .page-title {
-        font-size: 28px;
+        font-size: 24px; /* Judul dikecilin */
+    }
+    .page-desc {
+        font-size: 12px;
     }
 
+   /* --- CONTAINER UTAMA --- */
+    .container {
+        padding: 0 10px; /* Kurangi padding pinggir layar biar kalender makin lega */
+    }
+
+    /* 3. KALENDER (JURUS PAMUNGKAS) */
     .calendar-card {
-        padding: 20px;
-    }
-
-    /* Ngecilin ukuran font & kotak kalender biar muat 7 hari di layar HP */
-    .date-cell {
-        min-height: 60px;
-        font-size: 16px;
+        padding: 15px 10px; /* Padding dalam dikurangin drastis */
+        border-radius: 20px;
+        /* Kalau layar HP-nya kekecilan banget (kayak iPhone SE), dia bakal bisa di-swipe ke samping */
+        overflow-x: auto; 
     }
     
-    .day-name {
-        font-size: 10px;
-        padding: 6px;
+    .calendar-nav {
+        margin-bottom: 20px;
+    }
+    
+    .calendar-month {
+        font-size: 16px; /* Bulan dikecilin */
+    }
+    
+    .nav-arrow {
+        font-size: 18px;
     }
 
-    /* Modal Pop-up disesuaikan ke layar HP */
+    /* Update di bagian kalender dalam @media (max-width: 768px) */
+.calendar-grid {
+    grid-template-columns: repeat(7, minmax(0, 1fr)); /* INI KUNCINYA BIAR RATA 7 KOLOM */
+    gap: 3px;
+}
+
+.day-name {
+    font-size: 9px;
+    padding: 5px 0;
+    word-break: break-all; /* Biar tulisan Jum'at ga maksa melar */
+}
+
+.date-cell {
+    font-size: 14px;
+    padding: 8px 2px;
+    min-height: 60px;
+    justify-content: flex-start; /* Biar angka di atas */
+}
+
+.tiny-text {
+    font-size: 7px; /* Dikecilin lagi */
+    white-space: normal; /* Biar teksnya mau turun ke baris baru */
+    line-height: 1.2;
+    margin-top: 5px;
+    word-wrap: break-word; /* Kalau kepanjangan, potong ke bawah */
+}
+
+    /* 4. MODAL & FORM */
     .modal-container {
+        width: 95%;
+    }
+    .modal-header {
         padding: 20px;
     }
-    
     .modal-body-wrapper {
         padding: 20px;
     }
-    
     .inner-green-card {
-        padding: 25px;
+        padding: 20px;
     }
-
+    .card-title {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
     .activity-flex {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: column; /* Foto dan teks ditumpuk atas bawah */
     }
-
     .activity-img {
         width: 100%;
         height: auto;
     }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 30px;
+    .modal-actions {
+        justify-content: center; /* Tombol pindah ke tengah */
     }
-    
+
+    /* 5. FOOTER */
+    .footer-grid {
+        grid-template-columns: 1fr; /* Jadi 1 kolom memanjang ke bawah */
+        text-align: center;
+    }
     .social-icons {
         justify-content: center;
+    }
+    .footer-col h4 {
+        margin-top: 15px;
+        margin-bottom: 10px;
     }
 }
