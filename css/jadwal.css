@@ -605,26 +605,9 @@ a {
 @media (max-width: 768px) {
     
 /* Ganti bagian ini aja di dalem @media max-width 768px */
+    /* --- JALUR MALAS: NAVBAR TANPA JS --- */
     .nav-links {
-        width: 100%;
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto; 
-        gap: 25px; /* Kasih jarak napas antar menu */
-        padding-bottom: 10px;
-        justify-content: flex-start;
-        -webkit-overflow-scrolling: touch; /* Biar swipe-nya licin kayak di app asli */
-    }
-
-    .nav-links a {
-        white-space: nowrap; /* Jangan turun ke bawah */
-        font-size: 14px;
-        flex-shrink: 0; /* INI KUNCINYA: Haram menciut/kegencet! */
-    }
-    
-    /* Sembunyiin scrollbar di menu navbar biar rapi */
-    .nav-links::-webkit-scrollbar {
-        display: none;
+        display: none; /* Sembunyiin menu teks, nyisain logo & search */
     }
 
     /* 2. HEADER TEXT */
