@@ -395,24 +395,49 @@ a {
     object-fit: cover;
 }
 
-/* =FOOTER= */
+/* ==========================================
+   9. FOOTER
+   ========================================== */
+/* ==========================================
+   FOOTER STYLE: BOMA HEBAT (REF SMANDUJATI)
+   ========================================== */
 .site-footer {
-    background-color: #00967A; 
+    background-color: #006d57; /* Hijau Khas BOMA */
     color: #FFFFFF;
-    padding: 80px 0;
-    font-family: 'Inter', sans-serif;
+    padding: 80px 0 40px;
+    font-family: 'Inter' regular, sans-serif;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1.5fr; 
-    gap: 40px;
+    grid-template-columns: 1.5fr 1fr 1.2fr; /* Pembagian kolom ala referensi */
+    gap: 60px;
+    align-items: start;
+}
+
+.footer-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+}
+
+.footer-address {
+    font-size: 15px;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: 30px;
 }
 
 .footer-col h4 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 24px;
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     color: #FFFFFF;
 }
 
@@ -422,79 +447,73 @@ a {
 }
 
 .footer-col ul li {
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 .footer-col ul li a {
     color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
     transition: 0.3s;
 }
 
 .footer-col ul li a:hover {
     color: #FFFFFF;
-    padding-left: 5px;
+    padding-left: 8px;
 }
 
-.footer-subscribe {
-    position: relative;
+/* Kontak & Pill Buttons */
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 15px;
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
-.footer-subscribe input {
-    width: 100%;
-    padding: 12px 16px;
-    background: rgba(255, 255, 255, 0.2); 
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 14px;
-    outline: none;
-}
-
-.footer-subscribe input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.send-btn {
-    position: absolute;
-    right: 10px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    opacity: 0.8;
-}
-
-.send-btn:hover {
-    opacity: 1;
-}
-
-.social-icons {
+.social-pills {
     display: flex;
-    gap: 15px;
+    gap: 12px; /* Jarak antar tombol pill */
+    flex-wrap: wrap; 
     margin-top: 20px;
 }
 
-.social-btn {
-    width: 32px;
-    height: 32px;
-    background: rgba(255, 255, 255, 0.1);
-    display: flex;
+.pill {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    color: white;
+    gap: 10px; /* INI KUNCINYA: Jarak antara ikon dan tulisan */
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: #FFFFFF !important;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
     text-decoration: none;
-    font-size: 16px;
-    transition: 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
 }
 
-.social-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
+.pill i {
+    font-size: 18px; /* Ukuran ikon dipertegas */
+}
+
+.pill:hover {
+    background-color: #FFFFFF;
+    color: #006D57 !important; /* Warna hijau BOMA pas di-hover */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Biar teks "BADAN OLAHRAGA MAHASISWA" di kiri gak terlalu nempel ke bawah */
+.footer-logo {
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.copyright-bottom {
+    font-size: 13px;
+    opacity: 0.6;
+    margin-top: 20px;
 }
 /* Kolom Kanan (Teks + Tombol) */
 .activity-info-col {
