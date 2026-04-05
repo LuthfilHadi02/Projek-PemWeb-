@@ -1,5 +1,5 @@
 /* ==========================================
-   1. CSS RESET & GLOBAL VARIABLES
+   1. GLOBAL RESET & VARIABLES
    ========================================== */
 :root {
     --bg-primary: #FFFFFF;
@@ -17,10 +17,14 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-primary);
-    color: var(--text-secondary); /* Perbaikan syntax dari kode lu sebelumnya */
+    color: var(--text-secondary);
     line-height: 1.6;
 }
 
@@ -53,96 +57,51 @@ a {
     display: block;
 }
 
-html {
-    scroll-behavior: smooth;
-}
 /* ==========================================
-   2. VISI MISI SECTION
-   ========================================== */
-.visi-misi-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr; 
-    gap: 60px; 
-    background-color: #f7f9fa;
-    padding: 60px;
-    border-radius: 20px;
-    align-items: center;
-}
-
-.visi-content h3 {
-    color: var(--text-primary);
-    margin-bottom: 12px;
-    font-size: 24px;
-}
-
-.visi-image-container {
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.visi-image-container img {
-    width: 100%;
-    display: block;
-}
-
-.visi-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, var(--accent-color));
-    color: white;
-    padding: 24px;
-}
-
-.visi-box h3, .misi-box h3 {
-    font-size: 32px;
-    font-weight: 800; 
-    margin-bottom: 16px;
-    color: #111827; 
-}
-
-.misi-box ul {
-    list-style: none; 
-    padding: 0;
-}
-
-.misi-box ul li strong {
-    color: #111827; 
-    font-size: 20px;
-}
-
-/* ==========================================
-   3. NAVBAR
+   2. NAVBAR & SEARCH BAR
    ========================================== */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 24px; 
-    background-color: #00967A;
+    background-color: #008774;
     border-bottom: 1px solid var(--border-color);
     height: 80px; 
 }
 
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-text {
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: left;
+}
+
 .nav-links {
     display: flex;
+    align-items: center;
     gap: 32px; 
     height: 100%; 
-    align-items: center;
 }
 
 .nav-links a {
-    font-size: 14px;
-    font-weight: 500;
     position: relative;
-    color: #FFFFFF;
-    transition: opacity 0.3s ease;
     display: flex;
     align-items: center;
     height: 100%; 
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 500;
     text-decoration: none;
+    transition: opacity 0.3s ease;
 }
 
 .nav-links a::after {
@@ -157,7 +116,6 @@ html {
 }
 
 .nav-links a.active {
-    color: #FFFFFF;
     font-weight: 700;
 }
 
@@ -170,30 +128,25 @@ html {
     width: 100%;
 }
 
-/* ==========================================
-   SEARCH BAR PREMIUM (BISA DIKETIK)
-   ========================================== */
-
-/* Ini bungkusan lu yang lama, gua ubah cursor-nya aja */
+/* --- Search Pill Premium --- */
 .search-btn {
     display: flex;
     align-items: center;
     gap: 10px; 
+    padding: 10px 24px;
     background-color: #FFFFFF;
     color: var(--accent-color); 
-    padding: 10px 24px;
     border-radius: 50px; 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+    cursor: text;
     transition: all 0.3s ease;
-    cursor: text; /* Ganti pointer jadi text karena sekarang buat ngetik */
 }
 
-/* Efek melayang jalan pas di-hover ATAU pas lagi diklik buat ngetik (focus-within) */
 .search-btn:hover, 
 .search-btn:focus-within {
     transform: translateY(-2px); 
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     background-color: #f8fafc;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 .search-btn svg {
@@ -205,43 +158,40 @@ html {
     transform: scale(1.1); 
 }
 
-/* --- STYLING KHUSUS KOTAK KETIKANNYA --- */
 .search-btn input {
+    width: 60px;
+    background: transparent;
     border: none;
     outline: none;
-    background: transparent; /* Biar nyatu sama bungkusan putihnya */
     color: var(--accent-color);
     font-family: 'Inter', sans-serif;
     font-size: 13px;
     font-weight: 700;
-    width: 60px; /* Lebar default pas cuma ada tulisan "Search" */
     transition: width 0.3s ease;
 }
 
-/* Warna dan ketebalan teks "Search" sebelum diketik */
 .search-btn input::placeholder {
     color: var(--accent-color);
     font-weight: 700;
     opacity: 1;
 }
 
-/* Pas lu klik buat ngetik, kotaknya otomatis manjang biar lega */
 .search-btn input:focus {
     width: 130px; 
 }
 
 /* ==========================================
-   4. HERO SECTION
+   3. HERO SECTION
    ========================================== */
 .hero-section {
     position: relative;
-    min-height: 80vh; 
     display: flex;
     align-items: center;
+    min-height: 80vh; 
+    padding: 60px 0;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 60px 0;
 }
 
 .hero-content {
@@ -251,20 +201,19 @@ html {
     width: 100%;
 }
 
-.hero-left {
+.hero-left, .hero-right {
     flex: 1;
 }
 
 .hero-title {
+    color: #047857; 
     font-size: 52px; 
     font-weight: 800;
     line-height: 1.1;
-    color: #047857; 
     text-align: left;
 }
 
 .hero-right {
-    flex: 1;
     display: flex;
     justify-content: flex-end; 
 }
@@ -275,23 +224,81 @@ html {
 }
 
 .hero-text {
-    font-size: 15px;
-    color: var(--text-primary);
     margin-bottom: 24px;
+    color: var(--text-primary);
+    font-size: 15px;
     line-height: 1.6;
 }
 
 /* ==========================================
-   5. BUTTONS
+   4. VISI & MISI SECTION
+   ========================================== */
+.visi-misi-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr; 
+    gap: 60px; 
+    align-items: center;
+    padding: 60px;
+    background-color: #f7f9fa;
+    border-radius: 20px;
+}
+
+.visi-content h3 {
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    font-size: 24px;
+}
+
+.visi-image-container {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.visi-image-container img {
+    display: block;
+    width: 100%;
+}
+
+.visi-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px;
+    background: linear-gradient(transparent, var(--accent-color));
+    color: white;
+}
+
+.visi-box h3, .misi-box h3 {
+    margin-bottom: 16px;
+    color: #111827; 
+    font-size: 32px;
+    font-weight: 800; 
+}
+
+.misi-box ul {
+    padding: 0;
+    list-style: none; 
+}
+
+.misi-box ul li strong {
+    color: #111827; 
+    font-size: 20px;
+}
+
+/* ==========================================
+   5. UI COMPONENTS (BUTTONS, GRIDS, CARDS)
    ========================================== */
 .btn-primary {
     display: inline-block;
+    padding: 12px 32px;
     background-color: #047857;
     color: #FFFFFF;
-    padding: 12px 32px;
     font-weight: 700;
-    border-radius: 4px;
+    font-size: 14px;
     text-transform: uppercase;
+    border-radius: 4px;
     transition: background 0.3s ease;
 }
 
@@ -299,16 +306,13 @@ html {
     background-color: var(--accent-hover);
 }
 
-/* ==========================================
-   6. GRID LAYOUTS
-   ========================================== */
 .section-padding {
     padding: 64px 0;
 }
 
 .section-title {
-    font-size: 24px;
     margin-bottom: 24px;
+    font-size: 24px;
 }
 
 .grid-3-cols {
@@ -323,16 +327,13 @@ html {
     gap: 32px;
 }
 
-/* ==========================================
-   7. CARDS
-   ========================================== */
 .card {
+    display: flex;
+    flex-direction: column;
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
 }
 
 .card-img {
@@ -342,72 +343,69 @@ html {
 }
 
 .card-content {
-    padding: 24px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    padding: 24px;
 }
 
 .card-title {
-    font-size: 18px;
     margin-bottom: 8px;
+    font-size: 18px;
 }
 
 .card-desc {
-    font-size: 14px;
-    margin-bottom: 24px;
     flex-grow: 1;
+    margin-bottom: 24px;
+    font-size: 14px;
 }
 
 /* ==========================================
-   9. FOOTER
-   ========================================== */
-/* ==========================================
-   FOOTER STYLE: BOMA HEBAT (REF SMANDUJATI)
+   6. FOOTER
    ========================================== */
 .site-footer {
-    background-color: #006d57; /* Hijau Khas BOMA */
-    color: #FFFFFF;
     padding: 80px 0 40px;
-    font-family: 'Inter' regular, sans-serif;
+    background-color: #008774; 
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1.2fr; /* Pembagian kolom ala referensi */
+    grid-template-columns: 1.5fr 1fr 1.2fr; 
     gap: 60px;
     align-items: start;
 }
 
 .footer-logo {
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 16px;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
+    margin-bottom: 15px;
     color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 1.2;
 }
 
 .footer-address {
+    margin-bottom: 30px;
     font-size: 15px;
     line-height: 1.6;
     opacity: 0.9;
-    margin-bottom: 30px;
 }
 
 .footer-col h4 {
+    margin-bottom: 20px;
+    color: #FFFFFF;
     font-size: 16px;
     font-weight: 800;
-    margin-bottom: 20px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #FFFFFF;
 }
 
 .footer-col ul {
-    list-style: none;
     padding: 0;
+    list-style: none;
 }
 
 .footer-col ul li {
@@ -421,23 +419,22 @@ html {
 }
 
 .footer-col ul li a:hover {
-    color: #FFFFFF;
     padding-left: 8px;
+    color: #FFFFFF;
 }
 
-/* Kontak & Pill Buttons */
 .contact-info p {
-    margin-bottom: 15px;
-    font-size: 15px;
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-bottom: 15px;
+    font-size: 15px;
 }
 
 .social-pills {
     display: flex;
-    gap: 12px; /* Jarak antar tombol pill */
     flex-wrap: wrap; 
+    gap: 12px; 
     margin-top: 20px;
 }
 
@@ -445,92 +442,98 @@ html {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px; /* INI KUNCINYA: Jarak antara ikon dan tulisan */
-    background-color: rgba(255, 255, 255, 0.1); 
-    color: #FFFFFF !important;
+    gap: 10px; 
     padding: 10px 18px;
+    background-color: rgba(255, 255, 255, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
+    color: #FFFFFF !important;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
 }
 
 .pill i {
-    font-size: 18px; /* Ukuran ikon dipertegas */
+    font-size: 18px; 
 }
 
 .pill:hover {
-    background-color: #FFFFFF;
-    color: #006D57 !important; /* Warna hijau BOMA pas di-hover */
     transform: translateY(-3px);
+    background-color: #FFFFFF;
+    color: #006D57 !important; 
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* Biar teks "BADAN OLAHRAGA MAHASISWA" di kiri gak terlalu nempel ke bawah */
-.footer-logo {
-    margin-bottom: 15px;
-    line-height: 1.2;
-}
-
 .copyright-bottom {
+    margin-top: 20px;
     font-size: 13px;
     opacity: 0.6;
-    margin-top: 20px;
 }
 
-/* Responsive Mobile */
-/* Tablet & Laptop Kecil */
+/* ==========================================
+   7. RESPONSIVE MEDIA QUERIES
+   ========================================== */
+
+/* --- TABLET --- */
 @media screen and (max-width: 1024px) {
     .grid-3-cols {
-        grid-template-columns: repeat(2, 1fr); /* 3 kolom jadi 2 kolom */
+        grid-template-columns: repeat(2, 1fr); 
     }
+    
     .hero-title {
         font-size: 40px;
     }
+    
     .visi-misi-grid {
         gap: 30px;
         padding: 40px;
     }
 }
 
-/* HP / Mobile */
-@media screen and (max-width: 480px) {
+/* --- MOBILE --- */
+/* (Catatan: Gua naikin dari 480px ke 768px biar aman di semua layar HP) */
+@media screen and (max-width: 768px) {
+    /* Navbar */
     .nav-links {
-        display: none; /* Sembunyiin menu teks, nyisain logo & search */
+        display: none; 
     }
     
+    /* Hero */
     .hero-content {
         flex-direction: column;
-        text-align: center;
         gap: 40px;
+        text-align: center;
     }
     
     .hero-title {
-        text-align: center;
         font-size: 36px;
+        text-align: center;
     }
     
     .hero-right {
         justify-content: center;
     }
     
+    /* Visi Misi & Grid */
     .visi-misi-grid {
-        grid-template-columns: 1fr; /* Jadi 1 kolom atas bawah */
+        grid-template-columns: 1fr; 
         padding: 30px 20px;
     }
     
-    .grid-3-cols, .grid-2-cols {
-        grid-template-columns: 1fr; /* Card divisi & berita numpuk ke bawah */
+    .grid-3-cols, 
+    .grid-2-cols {
+        grid-template-columns: 1fr; 
     }
     
+    /* Footer */
     .footer-grid {
-        grid-template-columns: 1fr; /* Footer numpuk ke bawah */
+        grid-template-columns: 1fr; 
         text-align: center;
     }
     
-    .social-icons {
+    .social-icons,
+    .contact-info p {
         justify-content: center;
     }
 }

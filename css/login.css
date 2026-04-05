@@ -1,59 +1,72 @@
 /* ==========================================
-   FITUR LOGIN (MATCHING NEW FIGMA DESIGN)
+   1. GLOBAL RESET
    ========================================== */
-.login-body-new {
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+/* ==========================================
+   2. BASE LAYOUT & TYPOGRAPHY
+   ========================================== */
+.login-body-new {
     font-family: 'Inter', sans-serif;
     height: 100vh;
-    overflow: hidden; /* Biar gak bisa di-scroll */
-    background-color: #008773; /* Warna dasar Teal persis gambar */
+    overflow: hidden;
+    background-color: #008773;
 }
 
 .login-split-wrapper {
     display: flex;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 
-/* KIRI (GAMBAR) */
+/* ==========================================
+   3. LEFT PANEL (BACKGROUND IMAGE)
+   ========================================== */
 .login-split-left {
-    flex: 1.1; /* Proporsi kiri sedikit lebih besar */
+    flex: 1.1;
+    position: relative;
     background-size: cover;
     background-position: center;
-    border-top-right-radius: 40px; /* Lengkungan kanan atas */
-    border-bottom-right-radius: 40px; /* Lengkungan kanan bawah */
-    position: relative;
-    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.15); /* Bayangan tumpuk ke kanan */
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.15);
     z-index: 2;
 }
 
 .login-dark-overlay {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 15%;
     background-color: rgba(0, 0, 0, 0.4);
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; <-- INI YANG BIKIN DIA DI TENGAH BANGET TADI */
-    align-items: flex-start; /* Ganti jadi ini biar dia nempel ke atas */
-    padding-top: 15%; /* Tambahin ini buat ngatur jarak dari atapnya. Kalau kurang atas, kecilin angkanya (misal 10%) */
 }
 
 .login-center-logo {
-    width: 150px; /* Tadi 250px kegedean, sekarang kecilin. Kalau masih kegedean, jadiin 120px */
-    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4));
+    width: 120px;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
 }
 
-/* KANAN (FORM LOGIN) */
+/* ==========================================
+   4. RIGHT PANEL (LOGIN FORM)
+   ========================================== */
 .login-split-right {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #008773;
     color: #FFFFFF;
-    background-color: #008773; /* Warna Teal padat */
 }
 
 .login-form-box {
@@ -61,56 +74,56 @@
     max-width: 380px;
 }
 
-/* TOGGLE LOGIN/REGISTER */
+/* --- Toggle Login/Register --- */
 .login-toggle-pill {
-    background-color: #E6F4F1; /* Warna putih kehijauan terang */
-    border-radius: 50px;
     display: flex;
     padding: 6px;
     margin-bottom: 40px;
+    background-color: #E6F4F1;
+    border-radius: 50px;
 }
 
 .toggle-pill-btn {
     flex: 1;
     padding: 12px 0;
-    border: none;
     background: transparent;
+    border: none;
     border-radius: 50px;
-    font-weight: 600;
-    color: #008773; /* Warna teks teal pas inactive */
-    cursor: pointer;
+    color: #008773;
     font-size: 14px;
-    transition: 0.3s;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
 .toggle-pill-btn.active {
-    background-color: #008773; /* Tombol aktif berubah teal */
-    color: #FFFFFF; /* Teks putih */
+    background-color: #008773;
+    color: #FFFFFF;
 }
 
-/* INPUT FORM */
+/* --- Form Inputs --- */
 .login-input-group {
     margin-bottom: 24px;
 }
 
 .login-input-group label {
     display: block;
-    font-size: 12px;
     margin-bottom: 8px;
+    font-size: 12px;
     opacity: 0.9;
 }
 
 .login-input-line {
-    gap: 10px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #FFFFFF; /* Garis bawah putih */
+    gap: 10px;
     padding-bottom: 8px;
+    border-bottom: 1px solid #FFFFFF;
 }
 
 .login-input-line .icon {
-    font-size: 16px;
     margin: 0 8px 0 0;
+    font-size: 16px;
 }
 
 .login-input-line input {
@@ -126,13 +139,13 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* CHECKBOX & FORGOT PASSWORD */
+/* --- Form Options (Remember & Forgot) --- */
 .login-options-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 12px;
     margin-bottom: 40px;
+    font-size: 12px;
 }
 
 .login-remember {
@@ -145,39 +158,40 @@
 .login-forgot {
     color: #FFFFFF;
     text-decoration: none;
+    transition: 0.3s ease;
 }
 
 .login-forgot:hover {
     text-decoration: underline;
 }
 
-/* TOMBOL SUBMIT */
+/* --- Submit Button --- */
 .login-btn-submit {
     width: 100%;
-    background-color: #E6F4F1; /* Warna putih kehijauan terang */
-    color: #008773; /* Teks Teal */
     padding: 16px;
+    margin-bottom: 30px;
+    background-color: #E6F4F1;
     border: none;
     border-radius: 50px;
+    color: #008773;
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
-    margin-bottom: 30px;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .login-btn-submit:hover {
     background-color: #FFFFFF;
 }
 
-/* SOCIAL LOGIN */
+/* --- Social Login --- */
 .login-social-area {
     text-align: center;
 }
 
 .login-social-area p {
-    font-size: 12px;
     margin-bottom: 16px;
+    font-size: 12px;
     opacity: 0.9;
 }
 
@@ -188,37 +202,71 @@
 }
 
 .soc-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
-    font-weight: bold;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
     font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 /* ==========================================
-   RESPONSIVE MEDIA QUERIES (LOGIN.CSS)
+   5. RESPONSIVE DESIGN (MOBILE/TABLET)
    ========================================== */
 @media screen and (max-width: 768px) {
+    .login-body-new,
+    .login-split-wrapper {
+        height: auto !important;
+        min-height: 100vh;
+        overflow-y: auto !important;
+        overflow-x: hidden;
+    }
+
     .login-split-wrapper {
         flex-direction: column;
     }
     
-    /* Umpetin gambar di kiri, biar di HP fokus ke form login/register aja */
     .login-split-left {
-        display: none; 
+        display: block;
+        flex: none;
+        width: 100%;
+        height: 280px;
+        border-radius: 0 0 35px 35px;
+    }
+
+    .login-dark-overlay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 0;
+        border-radius: 0 0 35px 35px;
+    }
+
+    .login-center-logo {
+        width: 130px !important;
+        height: auto !important;
+        object-fit: contain;
     }
     
     .login-split-right {
+        flex: none;
         width: 100%;
-        height: 100vh;
-        padding: 30px 20px;
+        height: auto;
+        align-items: flex-start;
+        padding: 40px 24px 60px 24px;
     }
     
     .login-form-box {
-        max-width: 100%; /* Biar inputnya melar ngikutin layar HP */
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .login-social-icons svg {
+        flex-shrink: 0 !important;
+        width: 42px !important;
+        height: 42px !important;
     }
 }

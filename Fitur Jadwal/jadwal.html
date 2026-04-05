@@ -22,6 +22,9 @@
     <header class="navbar bg-accent">
         <div class="logo-container">
             <img src="../src/Foto_LogoBoma.png" alt="Logo BOMA" height="60">
+            <div class="logo-text">
+                Badan Olahraga<br>Mahasiswa
+            </div>
         </div>
         
         <nav class="nav-links">
@@ -38,7 +41,6 @@
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <!-- Ini input tembus pandangnya -->
             <input type="text" placeholder="Search">
         </div>
     </header>
@@ -161,21 +163,16 @@
 <div id="modalKegiatan" class="modal-overlay">
         <div class="modal-container">
             
-            <!-- Header Atas (Hijau Tua) -->
             <div class="modal-header">
                 <h2 id="modalTitle">Daftar Kegiatan</h2>
                 <p id="modalSub">Selasa, 20 Maret 2026</p>
             </div>
 
-            <!-- Pembungkus Bawah (Background Mint Terang) -->
             <div class="modal-body-wrapper">
-                
-                <!-- STEP 1: KONFIRMASI (Kotak Hijau Tua Dalam) -->
                 <div id="stepKonfirmasi" class="inner-green-card">
                     <h3 class="card-title">Apakah Anda Ingin Mengikuti Latihan?</h3>
                     
                     <div class="activity-flex">
-                        <!-- Ganti fotonya sesuai yang lu butuhin -->
                         <img src="../src/Basket.png" alt="Latihan" class="activity-img">
                         
                         <div class="activity-info-col">
@@ -185,7 +182,6 @@
                                 <p><strong>Tempat :</strong><br>Lapangan Kampus UPI di Cibiru</p>
                             </div>
                             
-                            <!-- Tombol ditaruh di dalam flex biar nempel kanan bawah -->
                             <div class="modal-actions">
                                 <button class="btn-confirm-yes" onclick="showFormDiri()">Ya</button>
                                 <button class="btn-confirm-no" onclick="closeModal()">Tidak</button>
@@ -194,7 +190,6 @@
                     </div>
                 </div>
 
-                <!-- STEP 2: DATA DIRI (Kotak Hijau Tua Dalam) -->
                 <div id="stepDataDiri" class="inner-green-card" style="display: none;">
                     <h3 class="card-title">Silahkan Isi Data Diri Anda</h3>
                     

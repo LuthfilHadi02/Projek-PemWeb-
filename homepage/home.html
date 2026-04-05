@@ -23,6 +23,9 @@
     <header class="navbar bg-accent">
         <div class="logo-container">
             <img src="../src/Foto_LogoBoma.png" alt="Logo BOMA" height="60">
+            <div class="logo-text">
+                Badan Olahraga<br>Mahasiswa
+            </div>
         </div>
         
         <nav class="nav-links">
@@ -207,9 +210,7 @@
 
     <script>
         function prosesLogout() {
-            // Hapus KTP dari browser
             localStorage.removeItem('isLoggedIn');
-            // Lempar balik ke halaman login
             window.location.href = '../index.html';
         }
     </script>

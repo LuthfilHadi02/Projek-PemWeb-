@@ -78,7 +78,6 @@
     </div>
 
     <script>
-        // FUNGSI BUKA TUTUP PASSWORD
         function togglePass(inputId, eyeId) {
             const input = document.getElementById(inputId);
             const eye = document.getElementById(eyeId);
@@ -92,22 +91,19 @@
             }
         }
 
-        // FUNGSI PROSES REGISTER
         function prosesRegister(event) {
             event.preventDefault(); 
             
             const pass = document.getElementById('regPass').value;
             const confirm = document.getElementById('regConfirm').value;
 
-            // Pengecekan biar password atas bawah harus sama persis
             if (pass !== confirm) {
                 alert('Waduh, Password sama Confirm Password lu beda bro! Cek lagi dah.');
-                return; // Stop fungsi di sini, ga lanjut register
+                return; 
             }
 
-            // Kalau sukses dan sama, pura-puranya udah kedaftar
             alert('Register berhasil! Silakan Login.');
-            window.location.href = 'index.html'; // Tendang ke halaman login
+            window.location.href = 'index.html';
         }
     </script>
 </body>
